@@ -1,0 +1,116 @@
++include-style('footer')
++include-script('footer')
+include ../index-subscribe/index-subscribe
+.cookie-notification
+    .cookie-notification-wrap
+
+        .container
+            .cookie-notification__inner
+                .cookie-notification__title С целью улучшения качества обслуживания, для показа релевантной рекламы сайт использует файлы cookie и другие аналогичные технологии. Оставаясь на нашем сайте, Вы соглашаетесь с использованием данных технологий
+                .cookie-notification__control.js-cookie-notification-close
+                    .btn.btn--wide
+                        span Соглашаюсь
+footer.footer
+    .back-to-top
+        +icon('i-small-arrow')(style="width:22px; height:19px")
+    .container
+        .footer__logo
+            +lazy-img({
+                img: '/images/header-logo.svg',
+                placeholder: pixel
+            })
+        .footer__top
+            .footer__left
+                .footer__contacts.fz-16
+                    .footer__contacts-item
+                        +icon('i-location')(style="width: 24px; height: 24px")
+                        span г. Минск, просп. Победителей 106-11, пом. П-14
+                    .footer__contacts-item
+                        +icon('i-timetable')(style="width: 24px; height: 24px")
+                        span Пн-Пт: 09:00 - 20:00, Сб-Вс: 10:00 - 19:00
+                .footer__phones.fz-16
+                    include ../phones-list/phones-list
+            .footer__right.fz-16
+                .footer-nav
+                    .footer-nav__title Для покупателя
+                    .footer-nav__menu
+                        +nav({
+                            mod: 'nav--footer',
+                            list: [
+                                {name: 'Каталог', active: true},
+                                {name: 'Популярные товары'},
+                                {name: 'Подарки'},
+                                {name: 'Акции и скидки'},
+                                {name: 'Новости'},
+                                {name: 'О компании'},
+                                {name: 'Контакты'},
+                            ]
+                        })
+                .footer-nav
+                    .footer-nav__title Каталог
+                    .footer-nav__menu
+                        +nav({
+                            mod: 'nav--footer',
+                            list: [
+                                {name: 'Смартфоны'},
+                                {name: 'Телевизоры'},
+                                {name: 'Наушники'},
+                                {name: 'Колонки'},
+                                {name: 'Часы и фитнес браслеты'},
+                            ]
+                        })
+                .footer-nav
+                    .footer-nav__title Как купить
+                    .footer-nav__menu
+                        +nav({
+                            mod: 'nav--footer',
+                            list: [
+                                {name: 'Оплата'},
+                                {name: 'Доставка'},
+                                {name: 'Возврат'},
+                                {name: 'Рассрочка'},
+                                {name: 'Система расчета ЕРИП'},
+                            ]
+                        })
+        .footer__mid
+            .footer__payment
+                .footer__payment-item
+                    +lazy-img({
+                        img: 'images/payment-1.png',
+                        placeholder: pixel
+                    })
+                .footer__payment-item
+                    +lazy-img({
+                        img: 'images/payment-2.png',
+                        placeholder: pixel
+                    })
+                .footer__payment-item
+                    +lazy-img({
+                        img: 'images/payment-3.png',
+                        placeholder: pixel
+                    })
+                .footer__payment-item
+                    +lazy-img({
+                        img: 'images/payment-4.png',
+                        placeholder: pixel
+                    })
+                .footer__payment-item
+                    +lazy-img({
+                        img: 'images/payment-5.png',
+                        placeholder: pixel
+                    })
+                .footer__payment-item
+                    +lazy-img({
+                        img: 'images/payment-6.png',
+                        placeholder: pixel
+                    })
+                .footer__payment-item
+                    +lazy-img({
+                        img: 'images/payment-7.png',
+                        placeholder: pixel
+                    })
+            .footer__description.fz-16    Дата регистрации в Торговом реестре РБ: 20.01.2016 г. Свидетельство о регистрации № 0097577, выдано 11.11.2004 г. Мингорисполком. УНП 190579786.     Юр.адрес: 220062, г. Минск, пр. Победителей, д. 106, пом.17. Время работы интернет-магазина: Пн–Пт: 09:00–20:00, Сб–Вс: 10:00–19:00 Рассмотрение обращений потребителей, телефон: +375 33 667-18-33, e-mail: s.ikuznec@seon.by; Отдел торговли и услуг Администрации Центрального района г. Минска: тел. +375 17 306-42-95, + 375 17 306-42-65, +375 17 203-53-46
+        .footer__bottom
+            .footer__copy Все права защищены © 2015-2021, FASTER
+            .footer__dev
+                +dev()

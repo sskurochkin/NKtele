@@ -1,0 +1,58 @@
+-
+	var pages = [
+		{name: 'Компоненты', link: 'components'},
+		{name: '404', link: '404'},
+		{name: 'Эталонная страница', link: 'etalon'},
+		{name: 'Главная', link: 'index'},
+		{name: 'Малая корзина', link: 'mini-basket'},
+		{name: 'Страница товара', link: 'product-page'},
+		{name: 'Каталог', link: 'catalog'},
+		{name: 'Каталог-список', link: 'catalog-list'},
+		{name: 'Новости-список', link: 'news-list'},
+		{name: 'Новость-внутренняя', link: 'news-article'},
+		{name: 'Бренды список', link: 'brand-list'},
+		{name: 'Бренд внутрення', link: 'brand-inner'},
+		{name: 'ЛК итраница заказа', link: 'personal-history-detail'},
+		{name: 'ЛК история заказов', link: 'personal-history'},
+		{name: 'ЛК избранное', link: 'personal-favourites'},
+		{name: 'ЛК профиль', link: 'personal-profile'},
+		{name: 'ЛК подписки', link: 'personal-subscribe'},
+		{name: 'Оформление заказа', link: 'cart'},
+		{name: 'Успешный заказ', link: 'order-success'},
+		{name: 'Регистрация', link: 'registration'},
+		{name: 'Контакты', link: 'contacts'},
+		{name: 'Часто задаваемые вопросы', link: 'faq'},
+	]
+	pages.sort(function(a, b){
+
+		var nameA=a.name.toLowerCase();
+		var nameB=b.name.toLowerCase();
+
+		//- if (nameA < nameB) {
+		//- 	return -1
+		//- } else if (nameA > nameB) {
+		//- 	return 1
+		//- } else {
+		//- 	return 0 // Никакой сортировки
+		//- }
+	});
+
++include-style('pages-viget')
++include-script('pages-viget')
+
+
+.pages-viget
+	.pages-viget__menu
+		ul.pages-viget__menu-list
+			each item in pages
+				li.pages-viget__menu-item
+					a.pages-viget__menu-link(href= '/dist/' + item.link + '.html')= item.name
+			//- +e('li').__menu-item
+			//- 	+e('a').__menu-link(href= '#') Задача
+			//- +e('li').__menu-item
+			//- 	+e('a').__menu-link(href= 'https://docs.google.com/spreadsheets/d/1L29rFHnabz2YLBGoqjCHneSVKFeVW56piUQwhe1PU4I/edit?usp=sharing') Декомпозиция
+			//- +e('li').__menu-item
+			//- 	+e('a').__menu-link(href= 'https://www.figma.com/file/aNyaOlMSbOfbhCgL9jYbyf/Veska?нnode-id=91%3A0&viewport=-4685%2C575%2C0.4862944185733795') Дизай
+	.pages-viget__btn
+		.media-pointer
+	.pages-viget__build-all.hidden

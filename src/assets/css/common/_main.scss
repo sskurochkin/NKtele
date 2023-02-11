@@ -1,0 +1,128 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.no-transition * {
+	transition: none !important;
+}
+
+html {
+	box-sizing: border-box;
+	-ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	color      : $c-text;
+	background : $bg-main;
+	font-family: $f-main;
+	font-size  : $f-size;
+	font-weight: normal;
+	font-style : normal;
+	line-height: 1.35;
+	overflow-y : scroll;
+
+	&.menu-opened {
+		overflow: hidden;
+	}
+
+	@media (max-width: $sm - 1) {
+		font-size: 14px;
+	}
+
+	@media (max-width: $xs - 1) {
+		font-size: 12px;
+	}
+}
+
+.wrapper {
+	display       : flex;
+	flex-direction: column;
+	max-width     : 100vw;
+	min-height    : 100vh;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+
+.container-xl{
+	max-width: 1600px;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.icon {
+	flex-shrink: 0;
+}
+
+svg {
+	max-width: 100%;
+}
+
+img {
+	max-width : 100%;
+	object-fit: contain;
+}
+
+button {
+	font-family: $f-main;
+}
+
+.content-page,
+.faq {
+	a {
+		color: rgb(0, 0, 238);
+
+		&:hover {
+			@media (min-width: 1024px) {
+				opacity: 0.75;
+			}
+		}
+	}
+
+	a:not([class]) {
+		display: inline;
+
+		@media (min-width: $md) {
+			&:hover {
+				color  : rgb(0, 0, 238);
+				opacity: 0.75;
+			}
+		}
+	}
+}
+
+a {
+	display        : inline-block;
+	margin         : 0;
+	padding        : 0;
+	transition     : color 0.3s;
+	vertical-align : baseline;
+	text-decoration: none;
+	color          : $c-text;
+}
+
+a:not([class]) {
+	color  : $c-link;
+	display: inline;
+
+	@media (min-width: $md) {
+		&:hover {
+			color: $c-primary-hover;
+		}
+	}
+}
+
+input {
+	font-family: $f-main;
+
+	&::placeholder {
+		font-family: $f-main;
+	}
+}

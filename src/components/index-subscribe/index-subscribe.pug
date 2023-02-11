@@ -1,0 +1,35 @@
++include-style('index-subscribe')
+
+section.index-subscribe.section-margin
+    .container
+        .index-subscribe__inner
+            .index-subscribe__left
+                .index-subscribe__icon
+                    +icon('i-mail-2')(style="width: 32px; height: 32px")
+                .index-subscribe__content
+                    .index-subscribe__title.fz-18 Рассылка действительно полезных предложений
+                    .index-subscribe__descr.fz-16 Подпишитесь на последние обновления и узнавайте о новинках и специальных предложениях первыми
+            .index-subscribe__right
+                form.bv-form.index-subscribe__form
+                    .index-subscribe__form-header
+                        +input({
+                            label: '',
+                            name: false,
+                            small: false,
+                            placeholder: 'Введите Ваш е-mail',
+                            required: true,
+                            pattern: '[A-Za-zА-Яа-я0-9\_\-]{1,}@[A-Za-zА-Яа-я0-9\_\-]{1,}\.[A-Za-zА-Яа-я0-9]{2,}',
+                            validation: {
+                                message: 'Заполните поле',
+                                regexp: 'Неверный формат',
+                                emailaddress: ' ',
+                                identical: false
+                            }
+                        })
+                        button(type="submit").btn.btn--primary
+                            span Подписаться
+                    .index-subscribe__form-footer
+                        +checkbox({
+                            policy: true,
+                            require: true,
+                        })

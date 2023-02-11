@@ -1,0 +1,35 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Страница товара'
+	- var pageBodyClass = ''
+	- var dir = './'
+
+
+block main
+	.container
+		+breadcrumb({
+			content2 : 'Каталог',
+			ref_content2: true,
+			content3 : 'Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F)',
+		})
+		+page-header-section({
+			title: "Смартфон Samsung Galaxy A32 4Gb/128Gb Violet (SM-A325F)",
+			sidemenu: false
+			})
+	include ../../components/product-page/product-page
+
+block pageModal
+	include ../../components/modal/review/modal-review
+
+
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src="./js/vendor/swiper.min.js" defer)

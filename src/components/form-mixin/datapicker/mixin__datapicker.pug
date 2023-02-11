@@ -1,0 +1,16 @@
+mixin datapicker(args)
+	+include-script('form-mixin/datapicker')
+	+include-style('form-mixin/datapicker')
+	.form-group.form-group--common(class= args.fg_mod)
+		-
+			var id = args.id || Math.floor(Math.random() * 9999999999);
+
+		.datepicker-input-wrap
+			input.form-control.form-control--datepicker.js-form-control--datepicker.form-control--common(
+			id= 'ID' + id
+			placeholder=args.placeholder || " ",
+			readonly="readonly",
+			data-bv-notempty-message= args.validation && args.validation.message || 'Обязательное поле',
+			required=args.required,
+			value=args.value || ''
+			name='NAME' + id)

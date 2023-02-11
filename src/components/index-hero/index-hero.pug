@@ -1,0 +1,66 @@
++include-style('index-hero')
++include-script('index-hero')
+
+section.index-hero
+	.container
+		.index-hero__inner
+			.index-hero__item.index-hero__item--main
+				.index-hero__slider
+					+swiper({
+						container_mod: 'slider-fs__container',
+						wrapper_mod: '',
+						navigation: true,
+						pagination: true,
+					}).slider-fs.js-slider-fs
+						.swiper-slide
+							<picture class=" index-slider__img-wrap">
+								<source  media="(min-width: 575px)"  srcset= '/local/templates/html/images/hero-slide-1.jpg'>
+								<source media="(min-width: 0px)"  srcset="/local/templates/html/images/hero-slide-1-mobile.jpg">
+								img(src="/local/templates/html/images/hero-slide-1.jpg" alt="")
+							</picture>
+						.swiper-slide
+							+lazy-picture-slider({
+								source:[
+									{
+									media: '575',
+									img: 'images/hero-slide-1.jpg',
+									placeholder: pixel
+									},
+										{
+									media: '0',
+									img: 'images/hero-slide-1-mobile.jpg',
+									placeholder: pixel
+									}
+								]
+							})
+						.swiper-slide
+							+lazy-picture-slider({
+								source:[
+									{
+									media: '575',
+									img: 'images/hero-slide-1.jpg',
+									placeholder: pixel
+									},
+										{
+									media: '0',
+									img: 'images/hero-slide-1-mobile.jpg',
+									placeholder: pixel
+									}
+								]
+							})
+			.index-hero__item
+				.index-hero__banner
+					a(href="#").index-hero__img-wrap
+						<picture class=" index-slider__img-wrap">
+							<source  media="(min-width: 400px)"  srcset= '/local/templates/html/images/hero-banner-1.jpg'>
+							<source media="(min-width: 0px)"  srcset="/local/templates/html/images/hero-banner-1-mobile.jpg">
+							img(src="/local/templates/html/images/hero-banner-1.jpg" alt="").swiper-lazy
+						</picture>
+			.index-hero__item
+				.index-hero__banner
+					a(href="#").index-hero__img-wrap
+						<picture class=" index-slider__img-wrap">
+							<source  media="(min-width: 400px)"  srcset= '/local/templates/html/images/hero-banner-2.jpg'>
+							<source media="(min-width: 0px)"  srcset="/local/templates/html/images/hero-banner-2-mobile.jpg">
+							img(src="/local/templates/html/images/hero-banner-1.jpg" alt="").swiper-lazy
+						</picture>

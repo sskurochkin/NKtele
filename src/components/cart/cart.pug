@@ -1,0 +1,701 @@
++include-style('cart')
++include-script('map')
++include-script('cart')
+.cart-empty
+    .cart-empty__title Ваша корзина пуста
+    .cart-empty__descr Вы ничего у нас не покупали? Все просто - сюда будут попадать товары, которые Вы покупаете,нажав на кнопку “В корзину” на карточке любого товара. После того, как вы выберите нужные товары, то можете снова перейти на эту страницу, чтобы увидеть заказ целиком и перейти к оформлени.
+    .cart-empty__link
+        a(href="#").btn.btn--primary
+            span Перейти в каталог
+br
+br
+br
+.cart
+    .row
+        .col-lg-6
+            .cart-products
+                .cart-products__header
+                    .cart-products__th-title Название
+                    .cart-products__th-price Цена
+                    .cart-products__th-status Статус
+                    .cart-products__th-control Количество
+                .cart-products__list
+                    .cart-products__item
+                        +search-results-card({
+                            type: 1,
+                            title: 'Умные часы Huawei Watch GT 3 Elegant 42 мм',
+                            cart: true
+                        })
+                    .cart-products__item
+                        +search-results-card({
+                            type: 1,
+                            cart: true,
+                            title: 'Портативный блендер Deerma Fruit Cup DEM-NU05 Pink',
+                            img: '/images/search-result-card-2.jpg'
+                        })
+                    .cart-products__item
+                        +search-results-card({
+                            type: 5,
+                            cart: true,
+                            img: '/images/search-result-card-3.jpg',
+                            title: 'Умный электрический чайник Viomi MechanicalKettle V-MK152B',
+                        })
+                    .cart-products__item
+                        +search-results-card({
+                            type: 5,
+                            cart: true,
+                            img: '/images/search-result-card-4.jpg',
+                            title: 'Домашняя IP-камера Xiaomi Home Security Camera 360 1080p (BHR4885GL)'
+                        })
+            form.cart-form.bv-form
+                .cart-form__header
+                    .cart-form__title Оформление заказа
+                    .cart-form__mod
+                        .btn.btn--wide
+                            span Я Юр.Лицо
+                .cart-form__block
+                    .cart-form__subtitle Контактное лицо
+                    .cart-form__row
+                        .cart-form__col
+                            +input({
+                                label: 'Фамилия Имя Отчество',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'Телефон',
+                                fg_mod: 'form-group--margin',
+                                type: 'tel',
+                                name: false,
+                                small: false,
+                                placeholder: '+375 (__) ___-__-__',
+                                required: true,
+                                pattern: 'phone',
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                fg_mod: 'form-group--margin',
+                                label: 'E-mail',
+                                name: false,
+                                small: false,
+                                placeholder: 'Введите Ваш е-mail',
+                                required: true,
+                                pattern: '[A-Za-zА-Яа-я0-9\_\-]{1,}@[A-Za-zА-Яа-я0-9\_\-]{1,}\.[A-Za-zА-Яа-я0-9]{2,}',
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                .cart-form__block
+                    .cart-form__subtitle Реквизиты юридического лица
+                    .cart-form__attention
+                        +icon('i-warning')(style="width:20px; height:20px")
+                        span Указываются строго в соответствии с учредительными документами организации, которая является плательщиком и получателем заказа
+                    .cart-form__row
+                        .cart-form__col
+                            +input({
+                                label: 'Название организации',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'УНП',
+                                fg_mod: 'form-group--margin',
+
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                fg_mod: 'form-group--margin',
+                                label: 'Юридический адрес',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                    .cart-form__row
+                        .cart-form__col
+                            +input({
+                                label: 'Расчетный счет (IBAN)',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'ФИО Руководителя',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                fg_mod: 'form-group--margin',
+                                label: 'Действует на основании',
+
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                    .cart-form__row
+                        .cart-form__col
+                            +input({
+                                label: 'Банк',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'БИК Банка',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'Адрес Банка',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                .cart-form__header
+                    .cart-form__title Доставка
+                .cart-form__block
+                    .cart-form__select-mobile
+                        .cart-form__select-mobile-trigger
+                            +icon('i-arrow-small')(style="width:12px; height:12px")
+                        .cart-form__row
+                            .cart-form__col
+                                +radio({
+                                    wrap_mod: 'form-group--cart',
+                                    class_mod: 'radio-delivery',
+                                    name: 'deliveryType',
+                                    checked: true
+                                })(data-delivery-radio-id="1")
+                                    +icon('i-selected')(style="width: 30px; height: 30px")
+                                    span Курьер по Минску
+                            .cart-form__col
+                                +radio({
+                                    wrap_mod: 'form-group--cart',
+                                    class_mod: 'radio-delivery',
+                                    name: 'deliveryType'
+                                })(data-delivery-radio-id="2")
+                                    +icon('i-selected')(style="width: 30px; height: 30px")
+                                    span Самовывоз
+                            .cart-form__col
+                                +radio({
+                                    wrap_mod: 'form-group--cart',
+                                    class_mod: 'radio-delivery',
+                                    name: 'deliveryType'
+                                })(data-delivery-radio-id="3")
+                                    +icon('i-selected')(style="width: 30px; height: 30px")
+                                    span Доставка почтой
+                .cart-form__block(data-delivery-content-id="1").active
+                    .cart-form__subtitle Укажите адрес доставки
+                    .cart-form__row
+                        .cart-form__col
+                            +input({
+                                label: 'Город',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'Улица',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'Дом',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                    .cart-form__row
+                        .cart-form__col
+                            +input({
+                                label: 'Подъезд',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'Этаж',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'Квартира',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                .cart-form__block.cart-form__block-bg(data-delivery-content-id="2")
+                    .cart-form__map
+                        .cart-map.cart-map-geo
+                            +radio({
+                                wrap_mod: 'form-group--cart-v2',
+                                class_mod: 'radio-stock',
+                                checked: true
+                            })
+                                .radio-stock__header
+                                    .radio-stock__title
+                                        +icon('i-location')(style="width:24px; height:24px")
+                                        span Беларусь, г. Минск, ул.Тимирязева д.9
+                                    .radio-stock__checkbox
+                                        .radio-stock__checkbox-selected
+                                            .btn.btn--primary
+                                                span
+                                                    +icon('i-selected')(style="width:24px; height:24px")
+                                                    span Выбран
+                                        .radio-stock__checkbox-unselected
+                                            .btn.btn--wide
+                                                span Выбрать
+                                .radio-stock__item(data-geo="53.865122, 27.524273")
+                                    .radio-stock__left
+                                        .radio-stock__subtitle Склад
+                                        .radio-stock__info г. Минск, ул.Тимирязева д.9
+                                        .radio-stock__info Телефон: +375 (17) 336-40-44
+                                        .radio-stock__info Режим работы: 9.00-16.00
+                                    .radio-stock__right
+                                        .cart-map__right
+                                            .js-map.preloader.map
+                            +radio({
+                                wrap_mod: 'form-group--cart-v2',
+                                class_mod: 'radio-stock',
+                            })
+                                .radio-stock__header
+                                    .radio-stock__title
+                                        +icon('i-location')(style="width:24px; height:24px")
+                                        span Беларусь, г. Минск, ул.Тимирязева д.9
+                                    .radio-stock__checkbox
+                                        .radio-stock__checkbox-selected
+                                            .btn.btn--primary
+                                                span
+                                                    +icon('i-selected')(style="width:24px; height:24px")
+                                                    span Выбран
+                                        .radio-stock__checkbox-unselected
+                                            .btn.btn--wide
+                                                span Выбрать
+                                .radio-stock__item(data-geo="53.885122, 27.534273")
+                                    .radio-stock__left
+                                        .radio-stock__subtitle Склад
+                                        .radio-stock__info г. Минск, ул.Тимирязева д.9 режим работы 9.00-16.00
+                                        .radio-stock__info Телефон: +375 (17) 336-40-44
+                                        .radio-stock__info Режим работы: 9.00-16.00
+                                    .radio-stock__right
+                                        .cart-map__right
+                                            .js-map.preloader.map
+                .cart-form__block(data-delivery-content-id="3")
+                    .cart-form__subtitle Укажите адрес для отправки
+                    .cart-form__row
+                        .cart-form__col
+                            +input({
+                                label: 'Город',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'Улица',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'Дом',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                    .cart-form__row
+                        .cart-form__col
+                            +input({
+                                label: 'Подъезд',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'Этаж',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                        .cart-form__col
+                            +input({
+                                label: 'Квартира',
+                                fg_mod: 'form-group--margin',
+                                type: 'text',
+                                name: false,
+                                small: false,
+                                placeholder: '',
+                                required: true,
+                                validation: {
+                                    message: 'Заполните поле',
+                                    regexp: 'Неверный формат',
+                                    emailaddress: ' ',
+                                    identical: false
+                                }
+                            })
+                .cart-form__header
+                    .cart-form__title Оплата
+                .cart-form__block
+                    .cart-form__select-mobile
+                        .cart-form__select-mobile-trigger
+                            +icon('i-arrow-small')(style="width:12px; height:12px")
+                        .cart-form__row
+                            .cart-form__col
+                                +radio({
+                                    wrap_mod: 'form-group--cart',
+                                    class_mod: 'radio-payment',
+                                    name: 'paymentType',
+                                    checked: true
+                                })
+                                    +icon('i-selected')(style="width: 30px; height: 30px")
+                                    span Наличными курьеру
+                            .cart-form__col
+                                +radio({
+                                    wrap_mod: 'form-group--cart',
+                                    class_mod: 'radio-payment',
+                                    name: 'paymentType'
+                                })
+                                    +icon('i-selected')(style="width: 30px; height: 30px")
+                                    span Оплата онлайн
+                .cart-form__header
+                    .cart-form__title Комментарий к заказу
+                .cart-form__block
+                    +textarea({
+                        label: '',
+                        placeholder: 'Напишите свои пожелания к заказу'
+                    })
+                +checkbox({
+                    fg_mod: 'form-group--margin',
+                    policy: true,
+                    require: true,
+                })
+                button(type="submit").btn.btn--primary
+                    span Оформить заказ
+
+        .col-lg-3
+            .cart-checkout-sticky
+                .cart-checkout-wrap
+                    .cart-checkout
+                        .cart-checkout__header
+                            .cart-checkout__title В корзине
+                            //- .cart-checkout__table
+                            //- 	.cart-checkout__prop 1 товар
+                            //- 	.cart-checkout__sep
+                            //- 	.cart-checkout__val
+                            //- 		<div class="product-card__price-current product-card__price--discount fz-18">205.00 BYN</div>
+                            //- 		<div class="product-card__price-old fz-15">244.00 BYN</div>
+                            .cart-checkout__table
+                                .cart-checkout__prop 1 товар
+                                .cart-checkout__sep
+                                .cart-checkout__val
+                                    <div class="product-card__price-current fz-18 ">205.00 BYN</div>
+                            .cart-checkout__table
+                                .cart-checkout__prop Доставка
+                                .cart-checkout__sep
+                                .cart-checkout__val Бесплатно
+                        .cart-checkout__body
+                            .cart-checkout__table
+                                .cart-checkout__prop.cart-checkout__total К оплате
+                                .cart-checkout__sep
+                                .cart-checkout__val.cart-checkout__total 176.00 BYN
+                            //- .cart-checkout__table
+                            //- 	.cart-checkout__prop Ваша экономия
+                            //- 	.cart-checkout__sep
+                            //- 	.cart-checkout__val 75.52 BYN
+                            .cart-checkout__promo
+                                +icon('i-warning')(style="width:12px; height:12px")
+                                .cart-checkout__promo-title У меня есть промокод
+                            .cart-checkout__promo-input.hidden
+                                +input({
+                                    fg_mod: '',
+                                    placeholder: 'Введите промокод',
+                                    type: 'text',
+                                    name: false,
+                                    small: false,
+                                    required: true,
+                                    validation: {
+                                        message: 'Заполните поле',
+                                        regexp: 'Неверный формат',
+                                        emailaddress: ' ',
+                                        identical: false
+                                    }
+                                })
+                                button.btn.btn--primary.js-promo-submit.disabled
+                                    span Применить
+                            .cart-checkout__submit
+                                .btn.btn--primary
+                                    span Оформить заказ
+                br
+                .cart-checkout-wrap
+                    .cart-checkout
+                        .cart-checkout__header
+                            .cart-checkout__title В корзине
+                            //- .cart-checkout__table
+                            //- 	.cart-checkout__prop 1 товар
+                            //- 	.cart-checkout__sep
+                            //- 	.cart-checkout__val
+                            //- 		<div class="product-card__price-current product-card__price--discount fz-18">205.00 BYN</div>
+                            //- 		<div class="product-card__price-old fz-15">244.00 BYN</div>
+                            .cart-checkout__table
+                                .cart-checkout__prop 1 товар
+                                .cart-checkout__sep
+                                .cart-checkout__val
+                                    <div class="product-card__price-current fz-18">205.00 BYN</div>
+                            .cart-checkout__table
+                                .cart-checkout__prop Доставка
+                                .cart-checkout__sep
+                                .cart-checkout__val Бесплатно
+                        .cart-checkout__body
+                            .cart-checkout__table
+                                .cart-checkout__prop.cart-checkout__total К оплате
+                                .cart-checkout__sep
+                                .cart-checkout__val.cart-checkout__total 176.00 BYN
+                            //- .cart-checkout__table
+                            //- 	.cart-checkout__prop Ваша экономия
+                            //- 	.cart-checkout__sep
+                            //- 	.cart-checkout__val 75.52 BYN
+                            .cart-checkout__promo-list
+                                .cart-checkout__promo-item.cart-checkout__promo-item--success
+                                    .cart-checkout__promo-code
+                                        span SL-3LDDZ-120L32U
+                                        +icon('i-close')(style="width:14px; height:14px")
+                                    .cart-checkout__promo-help Купон применен
+                                .cart-checkout__promo-item.cart-checkout__promo-item--failed
+                                    .cart-checkout__promo-code
+                                        span SL-3LDDZ-120L32U
+                                        +icon('i-close')(style="width:14px; height:14px")
+                                    .cart-checkout__promo-help Купон уже был использован
+                                .cart-checkout__promo-item.cart-checkout__promo-item--failed
+                                    .cart-checkout__promo-code
+                                        span SL-3LDDZ-120L32U
+                                        +icon('i-close')(style="width:14px; height:14px")
+                                    .cart-checkout__promo-help Купон не был применен из-за пересечения с другой скидкой
+                            .cart-checkout__table
+                                .cart-checkout__prop Скидка по промокоду
+                                .cart-checkout__sep
+                                .cart-checkout__val.cart-checkout__light
+                                    <div class="product-card__price-current fz-16 green">5.80 BYN</div>
+                            .cart-checkout__table
+                                .cart-checkout__prop.cart-checkout__total Общая сумма
+                                .cart-checkout__sep
+                                .cart-checkout__val.cart-checkout__total.cart-checkout__big.red 176.00 BYN
+
+                            .cart-checkout__submit
+                                .btn.btn--primary
+                                    span Оформить заказ
+

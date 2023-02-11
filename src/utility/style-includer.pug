@@ -1,0 +1,25 @@
+//- подключение общих критических стилей
+mixin style-includer()
+
+    if (PROJECT_MODE !== 'dev')
+        each item in componentsList
+            - var id =  Math.floor(Math.random() * 9999999999);
+            link(rel='stylesheet' href= dir + 'components-template/' + item + '/style.css?' + id as='style' onload="this.onload=null;this.rel='stylesheet'")
+
+
+
+
+//- Подключение скриптов отдельных компонентов
+mixin componentsScripts-includer()
+    if (PROJECT_NAME !== '')
+        script(src= dir + '/concat/' + pageName + '_html.js' defer)
+    else if (PROJECT_MODE !== 'dev')
+        each item in componentsScriptsList
+            - var id =  Math.floor(Math.random() * 9999999999);
+            script(src= dir + '/components-template/' + item + '/script.min.js?' + id defer)
+
+//- Подключение скриптов отдельных вендоров
+mixin vendorScripts-includer()
+
+    each item in vendorScriptsList
+        script(src=`./js/vendor/${item}` defer)

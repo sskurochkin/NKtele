@@ -1,0 +1,45 @@
++include-style('product-slider')
++include-script('product-slider')
+section.news-slider-section.section-margin
+	+index-presection({
+		title: 'Новости',
+		link: true
+	})
+	.container
+		.news-slider-section__inner
+			+swiper({
+				container_mod: 'product-slider__container',
+				wrapper_mod: '',
+				navigation: true,
+				pagination: false,
+			}).product-slider.js-slider-product
+				.product-card-wrap.product-card-wrap--news
+					+news-card({
+						img: '/images/news-card-1.jpg',
+						title: 'Подарок к открытию мотосезона - 10%',
+						slider: true,
+					})
+				.product-card-wrap.product-card-wrap--news
+					+news-card({
+						img: '/images/news-card-2.jpg',
+						title: 'Подарок к открытию мотосезона - 10%',
+						slider: true,
+					})
+				.product-card-wrap.product-card-wrap--news
+					+news-card({
+						img: '/images/news-card-3.jpg',
+						title: 'Подарок к открытию мотосезона - 10%',
+						slider: true,
+					})
+				.product-card-wrap.product-card-wrap--news
+					+news-card({
+						img: '/images/news-card-4.jpg',
+						title: 'Подарок к открытию мотосезона - 10%',
+						slider: true,
+					})
+				.product-card-wrap.product-card-wrap--news
+					+news-card({
+						img: '/images/news-card-1.jpg',
+						title: 'Подарок к открытию мотосезона - 10%',
+						slider: true,
+					})

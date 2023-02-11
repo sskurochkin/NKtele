@@ -1,0 +1,14 @@
+mixin index-presection(args={})
+	+include-style('mixin__index-presection')
+	.presection(class= args.mod)
+		.container
+			.presection__inner
+				if (!args.noTitle)
+					.presection__title= args.title
+				if (args.link)
+					a(href="#").presection__link.fz-16 Все хиты продаж
+
+
+mixin nav-link(args={})
+	+include-style('mixin__index-presection')
+	a(href="#").presection__link.presection__link--static.fz-16 Все хиты продаж

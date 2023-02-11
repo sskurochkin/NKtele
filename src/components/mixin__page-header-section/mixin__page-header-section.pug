@@ -1,0 +1,9 @@
+mixin page-header-section(args={})
+	section.page-header-section(class= args.sidemenu ? 'page-header-section--sidemenu sticky-header' : '')
+		h1.page-header-section__title!= args.title
+			span= args.span
+		if (args.sidemenu)
+			.page-header-section__menu.js-side-menu
+				+icon('i-arrow')(style="width: 24px; height: 24px")
+		if (args.search)
+			.page-header-section__search-result= args.search

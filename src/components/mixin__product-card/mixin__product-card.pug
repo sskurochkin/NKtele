@@ -1,0 +1,190 @@
+mixin product-card(args={})
+    +include-script('mixin__product-card')
+    +include-style('mixin__product-card')
+    .product-card(class=args.mod)
+        .product-card__inner
+            .product-card__header.fz-14
+                .product-card__header-left
+                    if (args.availability == 'available' || args.availability == 'order')
+                        if (args.discount)
+                            +product-label({
+                                mod: 'product-card__discount',
+                                content: args.discount
+                            })
+                        if (args.new)
+                            +product-label({
+                                mod: 'product-card__label--blue',
+                                content: 'Новинка'
+                            })
+                        if (args.hit)
+                            +product-label({
+                                mod: 'product-card__label--green',
+                                content: 'Хит'
+                            })
+                        if (args.action)
+                            +product-label({
+                                mod: 'product-card__label--orange',
+                                content: 'Акция'
+                            })
+                        if (args.recommend)
+                            +product-label({
+                                mod: 'product-card__label--pink',
+                                content: 'Рекомендуем'
+                            })
+                .product-card__header-right
+                    if (!args.personal)
+                        .product-card__favourites(class=args.favourites ? 'active' : '')
+                            +icon('i-heart-card-3')(style="width:22px; height:22px")
+                    else
+                        .product-card__favourites-remove
+                            +icon('i-close')(style="width:24px; height:24px")
+            .product-card__mid
+                a(href="#").product-card__carousel.js-product-carousel
+                    span.product-card__carousel_container
+                        //- набор 0
+                        span.product-card__carousel-items.active
+                            - var n = 0;
+                            - var imgs_list = [{img: '/images/product-1.png'},{img: '/images/product-2.png'},{img: '/images/product-3.png'},{img: '/images/product-4.png'}]
+                            each item in imgs_list
+                                if(n === 0)
+                                    if (!args.slider)
+                                        +lazy-img({
+                                            img: item.img,
+                                            placeholder: pixel,
+                                            img_mod: 'product-card__img',
+                                            wrap_mod: 'product-card__img-wrap product-card__img-carousel active',
+                                            link: false,
+                                            aria_label: false,
+                                        })
+                                    else
+                                        +lazy-img-slider({
+                                            img: item.img,
+                                            placeholder: pixel,
+                                            img_mod: 'product-card__img',
+                                            wrap_mod: 'product-card__img-wrap product-card__img-carousel active',
+                                            link: false,
+                                            aria_label: false,
+                                        })
+                                    - n++
+                                else
+                                    if (!args.slider)
+                                        +lazy-img({
+                                            img: item.img,
+                                            placeholder: pixel,
+                                            img_mod: '',
+                                            wrap_mod: 'product-card__img-wrap product-card__img-carousel',
+                                            link: false,
+                                            aria_label: false,
+                                        })
+                                    else
+                                        +lazy-img-slider({
+                                            img: item.img,
+                                            placeholder: pixel,
+                                            img_mod: '',
+                                            wrap_mod: 'product-card__img-carousel',
+                                            link: false,
+                                            aria_label: false,
+                                        })
+                                    - n++
+                            if (imgs_list.length > 1)
+                                span.product-card__carousel_controls
+                                    each item in imgs_list
+                                        span.product-card__carousel_control
+                //- a(href="#").product-card__image
+                //- 	if (args.slider)
+                //- 		+lazy-img-slider({
+                //- 			img: args.img,
+                //- 			placeholder: pixel
+                //- 		})
+                //- 	else
+                //- 		+lazy-img({
+                //- 			img: args.img,
+                //- 			placeholder: pixel
+                //- 		})
+                .product-card__status-wrap
+                    .product-card__status.fz-14
+                        .product-card__id Артикул:145154
+                        if (args.availability == 'available')
+                            +product-status({
+                                mod: 'product-card__availability--available',
+                                content: 'В наличии'
+                            })
+                        if (args.availability == 'order')
+                            +product-status({
+                                mod: 'product-card__availability--order',
+                                content: 'Под заказ'
+                            })
+                        if (args.availability == 'unavailable')
+                            +product-status({
+                                mod: 'product-card__availability--unavailable',
+                                content: 'Нет в наличии'
+                            })
+                        if (args.availability == 'false')
+                            +product-status({
+                                mod: 'product-card__availability--out',
+                                content: 'Снят с производства'
+                            })
+                a(href="#").product-card__title.fz-18= args.title
+                if (args.availability == 'false')
+                    .product-card__stock
+                        .product-card__prices
+                            .product-card__price-current.fz-18 Нет в продаже
+                else
+                    .product-card__stock
+                        .product-card__prices
+                            if (args.discount)
+                                .product-card__price-current.product-card__price--discount.fz-18 205.00 BYN
+                                .product-card__price-old.fz-15 244.00 BYN
+                            else
+                                .product-card__price-current.fz-18 244.00 BYN
+                        if (args.inCart)
+                            .product-card__cart
+                                .product-card__count 2
+                                +icon('i-cart-3')(style="width:26px; height: 22px")
+            if (args.availability == 'unavailable')
+                .product-card__hover
+                    .product-card__footer
+                        .btn.btn--wide
+                            span Подробнее
+                    .product-card__one-click.fz-16
+                        if (args.subscribe)
+                            span Отписаться
+                        else
+                            span Сообщить о поступлении
+            else if(args.availability == 'available')
+                .product-card__hover
+                    .product-card__footer
+                        if (args.inCart)
+                            +counter({
+                                value: 1,
+                                mod1: args.counterMod1,
+                                mod2: args.counterMod2,
+                            })(class=args.counterPreloader ? 'preloader' : '')
+                            .product-card__add-to-cart
+                                .product-card__to-cart.btn
+                                    span.product-card__to-cart-name В корзине
+                                    //- span.product-card__to-cart-subname Перейти
+                        else
+                            .product-card__add-to-cart
+                                .btn.btn--primary.btn--fw
+                                    span
+                                        +icon('i-cart')(style="width:28px; height:28px")
+                                        span В корзину
+                    .product-card__one-click.fz-16
+
+                        span Купить в 1 клик
+            else if (args.availability == 'order')
+                .product-card__hover
+                    .product-card__footer
+                        .product-card__add-to-cart
+                            .btn.btn--color.btn--fw
+                                span Под заказ
+                    .product-card__one-click.fz-16
+                        //- +icon('i-cart')(style="width:28px; height: 28px")
+                        span Купить в 1 клик
+            else if (args.availability == 'false')
+                .product-card__hover
+                    .product-card__footer
+                        .btn.btn--wide
+                            span Посмотреть аналоги
+

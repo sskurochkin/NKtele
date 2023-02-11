@@ -1,0 +1,133 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.tooltip-wrap {
+	width: 16px;
+	height: 16px;
+	background-position: center;
+	background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='8.00006' cy='8' r='5.5' stroke='%23B9C4D6'/%3E%3Cpath d='M8.37732 9.24559H7.37199C7.37461 9.00904 7.39301 8.80535 7.42718 8.63451C7.46398 8.46104 7.52574 8.30465 7.61248 8.16535C7.70184 8.02605 7.82012 7.88806 7.9673 7.75139C8.09083 7.641 8.1986 7.53587 8.29059 7.43599C8.38258 7.33611 8.45486 7.23361 8.50742 7.12848C8.55999 7.02071 8.58627 6.90112 8.58627 6.76971C8.58627 6.61727 8.56262 6.49111 8.51531 6.39123C8.47063 6.28872 8.40229 6.21119 8.3103 6.15862C8.22094 6.10606 8.10792 6.07977 7.97124 6.07977C7.85823 6.07977 7.75309 6.10474 7.65585 6.15468C7.5586 6.20199 7.47843 6.27558 7.41535 6.37546C7.3549 6.47534 7.32336 6.60675 7.32073 6.76971H6.17741C6.1853 6.40963 6.26809 6.11263 6.42579 5.87871C6.58612 5.64216 6.80033 5.46737 7.06841 5.35435C7.3365 5.23871 7.63745 5.18089 7.97124 5.18089C8.33921 5.18089 8.65461 5.24134 8.91744 5.36224C9.18027 5.48051 9.38134 5.6553 9.52064 5.88659C9.65994 6.11526 9.7296 6.39386 9.7296 6.7224C9.7296 6.95106 9.68491 7.15476 9.59555 7.33348C9.50619 7.50958 9.38923 7.67385 9.24467 7.8263C9.10011 7.97874 8.9411 8.13644 8.76763 8.29939C8.61781 8.43344 8.51531 8.57405 8.46011 8.72124C8.40755 8.86843 8.37995 9.04321 8.37732 9.24559ZM7.25371 10.4638C7.25371 10.2956 7.31153 10.1563 7.42718 10.0459C7.54283 9.9329 7.6979 9.87639 7.8924 9.87639C8.08426 9.87639 8.23802 9.9329 8.35367 10.0459C8.47194 10.1563 8.53108 10.2956 8.53108 10.4638C8.53108 10.6268 8.47194 10.7648 8.35367 10.8778C8.23802 10.9908 8.08426 11.0473 7.8924 11.0473C7.6979 11.0473 7.54283 10.9908 7.42718 10.8778C7.31153 10.7648 7.25371 10.6268 7.25371 10.4638Z' fill='%23B9C4D6'/%3E%3C/svg%3E%0A");
+	background-size: contain;
+	&:hover {
+		@media (min-width: 1024px) {
+			cursor: pointer;
+		}
+	}
+	&.tooltip-wrap--card {
+		width: 18px;
+		height: 18px;
+	}
+}
+
+.tooltip-icon {
+	display: block;
+	width: 14px;
+	height: 14px;
+	cursor: pointer;
+}
+
+.tooltip-icon--question {
+	fill: #8ea0ac;
+}
+
+.tooltip-icon--caution {
+	fill: #fca185;
+}
+
+.tt-content {
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: 1.29;
+	letter-spacing: normal;
+	color: #ffffff;
+}
+
+.tooltip {
+	z-index: $zindex-tooltip;
+	&.show {
+		opacity: 1;
+		padding: 15px 0;
+	}
+
+	.arrow {
+		display: block;
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		left: 50%;
+		transform: rotate(-45deg) skew(20deg, 20deg);
+		background-color: #fff;
+	}
+}
+
+.tooltip.tooltip--hover-off {
+	pointer-events: none;
+}
+.tooltip-inner {
+	background: #fff;
+	box-shadow: 0px 3px 40px rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+	padding: 25px 15px 10px;
+	max-width: 320px;
+}
+
+.tooltip-title {
+	display: block;
+	width: 100%;
+	font-weight: 500;
+	text-align: center;
+}
+
+.bs-tooltip-auto[x-placement^="bottom"] .arrow,
+.bs-tooltip-bottom .arrow {
+	top: 6px;
+}
+
+.bs-tooltip-auto[x-placement^="top"] .arrow,
+.bs-tooltip-top .arrow {
+	bottom: 6px;
+}
+
+.tooltip-close {
+	display: block;
+	position: absolute;
+	background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16.5966 10.025C17.1824 9.43923 17.1824 8.48948 16.5966 7.90369C16.0108 7.31791 15.061 7.31791 14.4753 7.9037L12.0003 10.3787L9.5255 7.90392C8.93972 7.31813 7.98997 7.31813 7.40418 7.90392C6.8184 8.4897 6.8184 9.43945 7.40418 10.0252L9.87895 12.5L7.40418 14.9748C6.8184 15.5605 6.8184 16.5103 7.40418 17.0961C7.98997 17.6819 8.93972 17.6819 9.5255 17.0961L12.0003 14.6213L14.4752 17.0963C15.061 17.6821 16.0108 17.6821 16.5966 17.0963C17.1824 16.5105 17.1824 15.5608 16.5966 14.975L14.1216 12.5L16.5966 10.025Z' fill='%23373E31'/%3E%3C/svg%3E%0A");
+	width: 24px;
+	height: 24px;
+	top: 16px;
+	right: 4px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+@media (max-width: $sm - 1px) {
+}
+
+@media (min-width: $sm) {
+}
+
+@media (min-width: $sm) and (max-width: $md - 1px) {
+}
+
+@media (max-width: $md - 1px) {
+}
+@media (min-width: $md) {
+}
+
+@media (min-width: $md) and (max-width: $lg - 1px) {
+}
+
+@media (min-width: $lg) {
+	.tooltip-inner {
+		padding: 12px;
+	}
+	.tooltip-close {
+		display: none;
+	}
+}
+
+@media (min-width: $lg) and (max-width: $xl - 1px) {
+}
+
+@media (min-width: $xl) {
+}

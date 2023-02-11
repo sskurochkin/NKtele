@@ -1,0 +1,35 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.seo-text {
+	margin: 100px 0px;
+	color : #AAAAAA;
+
+	@media (max-width: $sm - 1) {
+		margin: 54px 0px;
+	}
+
+	&__title {
+		font-size    : 24px;
+		font-weight  : 600;
+		margin-bottom: 20px;
+
+		@media (max-width: $sm - 1) {
+			font-size: 18px;
+		}
+	}
+
+	&__descr {
+		font-size: 16px;
+
+		@media (max-width: $sm - 1) {
+			font-size: 12px;
+		}
+
+		p {
+
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
+		}
+	}
+}

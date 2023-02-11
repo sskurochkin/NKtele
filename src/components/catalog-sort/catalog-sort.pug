@@ -1,0 +1,34 @@
++include-style('catalog-sort')
+.catalog-sort
+	.catalog-sort__left
+		+checkbox({
+			wrap_mod: 'checkbox--big',
+			label: 'в наличии'
+		})
+	.catalog-sort__right
+		.control-list
+			+select({
+				class: 'filter-select',
+				select_head: 'Сначала популярные'
+			})
+				+radio-option({
+					radio_class: 'selected',
+					name: 'sorting',
+					for: 'popular',
+					title: 'Сначала популярные'
+				})
+				+radio-option({
+					name: 'sorting',
+					for: 'expensive',
+					title: 'Сначала дорогие'
+				})
+				+radio-option({
+					name: 'sorting',
+					for: 'new',
+					title: 'Сначала новые'
+				})
+				+radio-option({
+					name: 'sorting',
+					for: 'brand',
+					title: 'По бренду'
+				})

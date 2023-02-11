@@ -1,0 +1,31 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Частые вопросы'
+	- var pageBodyClass = ''
+	- var dir = './'
+
+
+block main
+	.container
+		+breadcrumb({
+			content2 : 'Частые вопросы',
+
+		})
+		+page-header-section({
+			title: "Частые вопросы",
+			sidemenu: false
+			})
+		include ../../components/faq/faq
+
+
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src="./js/vendor/swiper.min.js" defer)

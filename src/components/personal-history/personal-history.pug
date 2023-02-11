@@ -1,0 +1,51 @@
++include-style('personal-history')
+
+mixin personal-history-card(args={})
+	.personal-history-card
+		.personal-history-card__header
+			.personal-history-card__left
+				span.personal-history-card__title Заказ 
+				span.personal-history-card__code №321-431 
+				span.personal-history-card__date от 05.12.2021,
+				span.personal-history-card__total <span>4 товара </span> на сумму <span>515.00 BYN </span>
+			if (args.completed)
+				.personal-history-card__right
+					span.personal-history-card__title Заказ выполнен
+					span.personal-history-card__completed 25.06.2021
+		.personal-history-card__body
+			.personal-history-card__block.personal-history-card__block--1
+				.personal-history-card__prop Статус
+				.personal-history-card__val(class=args.status)= args.statusText
+			.personal-history-card__block.personal-history-card__block--2
+				.personal-history-card__prop ФИО
+				.personal-history-card__val Валентин Барановский
+			.personal-history-card__block.personal-history-card__block--3
+				.personal-history-card__prop Доставка
+				.personal-history-card__val г.Волчковичи. Ул Кузьмы Черного 1. Оф.321
+			.personal-history-card__block.personal-history-card__block--4
+				a(href='#').personal-history-card__link Подробнее о заказе
+
+
+.personal-history
+	.personal-history__list
+		.personal-history__item
+			+personal-history-card({
+				status: 'completed',
+				statusText: 'Выполнен',
+				completed: true
+			})
+		.personal-history__item
+			+personal-history-card({
+				status: 'underway',
+				statusText: 'В работе'
+			})
+		.personal-history__item
+			+personal-history-card({
+				status: 'canceled',
+				statusText: 'Заказ отменен'
+			})
+		.personal-history__item
+			+personal-history-card({
+				status: 'paid',
+				statusText: 'Заказ оплачен'
+			})

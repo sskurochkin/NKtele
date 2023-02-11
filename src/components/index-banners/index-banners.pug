@@ -1,0 +1,19 @@
++include-style('index-banners')
+section.index-banners.section-margin
+	.container
+		.index-banners__inner
+			.index-banners__item
+				.index-banners__banner
+					+lazy-img({
+						wrap_mod: 'index-banners__img-wrap',
+						img: '/images/index-banner-1.jpg',
+						placeholder: pixel
+					})
+			.index-banners__item
+				.index-banners__banner
+					.index-banners__item
+						+lazy-img({
+							wrap_mod: 'index-banners__img-wrap',
+							img: '/images/index-banner-2.jpg',
+							placeholder: pixel
+						})

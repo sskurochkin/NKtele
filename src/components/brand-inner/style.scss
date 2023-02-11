@@ -1,0 +1,63 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.brand-inner {
+	margin-bottom: 100px;
+	@media (max-width: $sm - 1){
+		margin-bottom: 56px;
+	}
+	&__row {
+		display: flex;
+		margin : 0px -12px;
+		@media (max-width: $md - 1){
+			flex-direction: column;
+			margin: 0px;
+		}
+	}
+
+	&__col {
+		padding: 0px 12px;
+		@media (max-width: $md - 1){
+			padding: 0px;
+		}
+		&--left{
+			width: 23.5%;
+			position: sticky;
+			top: 150px;
+			align-self: flex-start;
+			@media (max-width: $md - 1){
+				width: auto;
+				position: static;
+				margin-bottom: 27px;
+			}
+		}
+		&--right{
+			width: 76.5%;
+			@media (max-width: $md - 1){
+				width: auto;
+			}
+		}
+	}
+
+	&__logo {
+		padding: 25px;
+		border : 1px solid #E4E4E4;
+	}
+
+	&__country {
+		margin-top: 20px;
+	}
+
+	&__link {
+		font-weight: 600;
+		color      : $c-primary;
+		margin-top : 8px;
+		transition: all .3s ease;
+		
+		&:hover {
+			@media (min-width: 1024px) {
+				cursor: pointer;
+				opacity: 0.8;
+			}
+		}
+	}
+}

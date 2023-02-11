@@ -1,0 +1,81 @@
++modal({
+    id: 'modal-review',
+    mod: 'modal-review',
+    title: 'Ваш отзыв',
+    header: true
+})
+    form.bv-form
+        +input({
+            label: 'Ваше имя',
+            fg_mod: 'form-group--margin',
+            type: 'text',
+            name: false,
+            small: false,
+            placeholder: '',
+            required: true,
+            validation: {
+                message: 'Заполните поле',
+                regexp: 'Неверный формат',
+                emailaddress: ' ',
+                identical: false
+            }
+        })
+        .form-group.form-group--margin
+            label.form-control-label Оценка
+                span.label-required *
+            .rate-group
+                .rate-group__item
+                    input(type="checkbox" id="checkbox-rate-1").checkbox-rate
+                    label(for="checkbox-rate-1").checkbox-rate-label
+                .rate-group__item
+                    input(type="checkbox" id="checkbox-rate-2").checkbox-rate
+                    label(for="checkbox-rate-2").checkbox-rate-label
+                .rate-group__item
+                    input(type="checkbox"  id="checkbox-rate-3").checkbox-rate
+                    label(for="checkbox-rate-3").checkbox-rate-label
+                .rate-group__item
+                    input(type="checkbox"  id="checkbox-rate-4").checkbox-rate
+                    label(for="checkbox-rate-4").checkbox-rate-label
+                .rate-group__item
+                    input(type="checkbox" id="checkbox-rate-5").checkbox-rate
+                    label(for="checkbox-rate-5").checkbox-rate-label
+            <small class="help-block hidden">Заполните поле</small>
+        +textarea({
+            fg_mod: 'form-group--margin',
+            label: 'Комментарий',
+            required: true,
+        })
+        +input({
+            label: 'Достоинства',
+            fg_mod: 'form-group--margin',
+            type: 'text',
+            name: false,
+            small: false,
+            placeholder: '',
+            required: false,
+            validation: {
+                message: 'Заполните поле',
+                regexp: 'Неверный формат',
+                emailaddress: ' ',
+                identical: false
+            }
+        })
+        +input({
+            label: 'Недостатки',
+            fg_mod: 'form-group--margin',
+            type: 'text',
+            name: false,
+            small: false,
+            placeholder: '',
+            required: false,
+            validation: {
+                message: 'Заполните поле',
+                regexp: 'Неверный формат',
+                emailaddress: ' ',
+                identical: false
+            }
+        })
+        button(type="submit").btn.btn--primary.btn--fw
+            span Отправить
+
+

@@ -1,0 +1,10 @@
+mixin tabs-block-v2(args={})
+	+include-style('mixin__tabs-block-v2')
+	+include-script('mixin__tabs-block-v2')
+	.tabs-block-v2(class=args.mod)
+		.tabs-block-v2__list
+			each item, id in args.list
+				if (args.tab)
+					.tabs-block-v2__item(class=item.active? 'active': '' data-tab-id=id+1)= item.name
+				else
+					.tabs-block-v2__item(class=item.active? 'active': '')= item.name

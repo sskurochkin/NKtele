@@ -1,0 +1,11 @@
++include-style('mini-basket')
+.mini-basket.mini-basket--empty
+    +lazy-img({
+        wrap_mod: 'mini-basket__empty-image',
+        img: 'images/empty-basket.svg'
+    })
+    .mini-basket__empty-title Ваша корзина пуста
+    .mini-basket__empty-descr Исправить это просто: выберите в каталоге интересующий товар и нажмите кнопку “В корзину”
+    .mini-basket__empty-control
+        .btn.btn--text
+            span Перейти в каталог

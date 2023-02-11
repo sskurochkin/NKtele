@@ -1,0 +1,45 @@
+extends ../../layout/layout
+
+block vars
+	- var pageTitle = 'Текстовая'
+	- var pageBodyClass = ''
+	- var dir = './'
+
+
+block main
+	.container
+		.row
+			.col-lg-6.offset-lg-2.col-md-8.offset-md-1
+				+breadcrumb({
+					content2 : 'H1 Open Sans SemiBold 36 • 44'
+				})
+				+page-header-section({
+					title: "Текстовая",
+					sidemenu: false
+				})
+				+include-style('content')
+				.btn.btn--primary(data-target="#modal-one-click" data-toggle="modal") Заказ в один клик
+				br
+				br
+				.btn.btn--primary(data-target="#modal-subscribe" data-toggle="modal") Подписка на товар
+				br
+				br
+				.content
+					//- img(src="https://picsum.photos/1058/489" alt="")
+					include ../../components/content/section-typography
+					include ../../components/content/section-images
+					include ../../components/content/section-list
+					include ../../components/content/section-table
+
+
+
+block vendorScripts
+	+vendorScripts-includer()
+block componentsStyles
+	+style-includer()
+
+block componentsScripts
+	+componentsScripts-includer()
+
+block scripts
+	script(src="./js/vendor/swiper.min.js" defer)

@@ -1,0 +1,55 @@
++modal({
+    id: 'modal-auth',
+    mod: 'modal-auth',
+    title: 'Личный кабинет',
+    header: true
+})
+    form.bv-form
+        +input({
+            label: 'Логин',
+            fg_mod: 'form-group--margin',
+            type: 'text',
+            name: false,
+            small: false,
+            placeholder: '',
+            required: true,
+            validation: {
+                message: 'Заполните поле',
+                regexp: 'Неверный формат',
+                emailaddress: ' ',
+                identical: false
+            }
+        })
+        +input({
+            label: 'Пароль',
+            fg_mod: 'form-group--margin',
+            type: 'password',
+            name: false,
+            small: false,
+            required: true,
+            validation: {
+                message: 'Заполните поле',
+                regexp: 'Неверный формат',
+                emailaddress: ' ',
+                identical: false
+            }
+        })
+        .modal-auth__footer
+            +checkbox({
+                fg_mod: 'checkbox-slider-wrap',
+                wrap_mod: 'checkbox-slider',
+                sublabel: 'Запомнить меня'
+            })
+            a(href="#").modal-auth__reset-password Забыли пароль
+        .modal-auth__control
+            button(type="submit").btn.btn--primary
+                span Войти
+            a(href="#").btn.btn--wide Регистрация
+        .modal-auth__social
+            .modal-auth__social-title Быстрый вход через социальные сети
+            .modal-auth__social-list
+                .modal-auth__social-fake
+                .modal-auth__social-fake
+                .modal-auth__social-fake
+                .modal-auth__social-fake
+

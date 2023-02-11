@@ -1,0 +1,23 @@
+mixin news-card(args={})
+	+include-style('mixin__news-card')
+	.news-card
+		+link-full()
+		.news-card__inner
+			.news-card__header
+				if (args.slider)
+					+lazy-img-slider({
+						img: args.img,
+						placeholder: pixel
+					})
+				else
+					+lazy-img({
+						img: args.img,
+						placeholder: pixel
+					})
+			.news-card__footer
+				.news-card__title.fz-16= args.title
+				if (args.descr)
+					.news-card__descr.fz-15= args.descr
+				else
+					.news-card__descr.fz-15 Скоро открытие мотосезона! Поэтому мы подготовили отличное предложение для всех, кто ждёт не дождётся, чтобы оседлать железного коня! 
+				.news-card__date.fz-12 12 апреля 2021

@@ -1,0 +1,8 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.inner-page-catalog-section {
+	&__title {
+		font-weight  : 600;
+		margin-bottom: 30px;
+	}
+}

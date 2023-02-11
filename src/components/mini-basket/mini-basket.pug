@@ -1,0 +1,66 @@
++include-style('mini-basket')
+.mini-basket
+    .mini-basket__header
+        .mini-basket__title Товары в корзине
+        .mini-basket__count Всего товаров: 8
+    .mini-basket__body
+        .mini-basket__scroll
+            +search-results-card({
+                mod: 'search-results-card--basket-mini',
+                search: true,
+                type: 1,
+                img: '/images/search-result-card-2.jpg',
+                title: 'Домашняя IP-камера Xiaomi Home Security Camera 360 1080p (BHR4885GL)...',
+                basket: true,
+            })
+            +search-results-card({
+                mod: 'search-results-card--basket-mini',
+                search: true,
+                type: 4,
+                img: '/images/search-result-card-3.jpg',
+                title: 'Домашняя IP-камера видеонаблюдения видеонаблюдения',
+                noLabel: true,
+                basket: true,
+            })
+            +search-results-card({
+                mod: 'search-results-card--basket-mini',
+                search: true,
+                type: 1,
+                img: '/images/search-result-card-4.jpg',
+                title: 'Домашняя IP-камера видеонаблюдения видеонаблюдения',
+                basket: true,
+            })
+            +search-results-card({
+                mod: 'search-results-card--basket-mini',
+                search: true,
+                type: 1,
+                img: '/images/search-result-card.png',
+                title: 'Домашняя IP-камера видеонаблюдения видеонаблюдения',
+            })
+            +search-results-card({
+                mod: 'search-results-card--basket-mini',
+                search: true,
+                type: 1,
+                img: '/images/search-result-card-2.jpg',
+                title: 'Домашняя IP-камера видеонаблюдения видеонаблюдения',
+            })
+            +search-results-card({
+                mod: 'search-results-card--basket-mini',
+                search: true,
+                type: 1,
+                img: '/images/search-result-card-3.jpg',
+                title: 'Домашняя IP-камера видеонаблюдения видеонаблюдения',
+            })
+    .mini-basket__footer
+        .mini-basket__total
+            .mini-basket__total-title Итого:
+            .mini-basket__total-sum 1280.00 BYN
+
+        .mini-basket__control
+            .header-notification__control
+                .header-notification__control-title Очистить
+                .header-notification__control-icon
+                    +icon('i-close')(style="width:24px; height:24px")
+            .mini-basket__link
+                .btn.btn--light
+                    span Оформить заказ

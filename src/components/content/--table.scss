@@ -1,0 +1,29 @@
+@import '../../assets/css/vars_mixins/vars_mixins';
+
+.content {
+	table {
+		display      : block;
+		margin-bottom: 20px;
+		max-width    : 100%;
+		overflow     : auto;
+		width: 100%;
+	}
+
+	tr {}
+
+	th {
+		padding         : 12px 25px;
+		font-weight     : 700;
+		background-color: #EEEEEE;
+		text-align      : left;
+	}
+
+	td {
+		padding      : 12px 25px;
+		border-bottom: 1px solid #E4E4E4;
+
+		&.color {
+			color: #AAAAAA
+		}
+	}
+}

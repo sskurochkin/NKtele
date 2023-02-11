@@ -1,0 +1,63 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+.tabs-block-v2 {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 40px;
+	@media (max-width: $sm - 1) {
+		margin-bottom: 21px;
+	}
+	&--align-start {
+		justify-content: flex-start;
+	}
+	&__list {
+		display: inline-flex;
+		align-items: center;
+		padding-bottom: 6px;
+		overflow: auto;
+		@media (max-width: $sm - 1) {
+			padding-bottom: 10px;
+		}
+	}
+	&__item {
+		padding: 0px 0px;
+		font-weight: 600;
+		font-size: 24px;
+		position: relative;
+		white-space: nowrap;
+		margin-right: 64px;
+		color: #AAAAAA;
+		@media (max-width: $sm - 1) {
+			font-size: 14px;
+			padding: 0px 0px;
+			margin-right: 28px;
+		}
+		&:after {
+			position: absolute;
+			content: "";
+			left: 0;
+			right: 100%;
+			bottom: -6px;
+			border-bottom: 3px solid $c-primary;
+			border-radius: 4px;
+			transition: all 0.3s ease;
+			@media (max-width: $sm - 1) {
+				bottom: -10px;
+			}
+		}
+		&.active {
+			&:after {
+				right: 0;
+			}
+			color: $c-primary;
+		}
+		&:hover {
+			@media (min-width: 1024px) {
+				cursor: pointer;
+				color: $c-primary;
+				&:after {
+					right: 0;
+				}
+			}
+		}
+	}
+}

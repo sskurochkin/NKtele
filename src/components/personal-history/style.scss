@@ -1,0 +1,373 @@
+ @import "src/assets/css/vars_mixins/vars_mixins";
+ .completed {
+     color: #6BC684;
+     font-weight: 600;
+ }
+ 
+ .underway {
+     color: #FE7235;
+     font-weight: 600;
+ }
+ 
+ .canceled {
+     color: #EB5757;
+     font-weight: 600;
+ }
+ 
+ .paid {
+     color: #0D2DFF;
+     font-weight: 600;
+ }
+ 
+ .personal-history-card {
+     &__header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 8px 22px;
+         background: #F6F6F6;
+         border: 1px solid #E4E4E4;
+         box-sizing: border-box;
+         border-radius: 4px 4px 0px 0px;
+         font-size: 16px;
+         @media (max-width: $md - 1) {
+             flex-direction: column;
+             align-items: flex-start;
+         }
+         @media (max-width: $sm - 1) {
+             padding: 8px 15px;
+             font-size: 12px;
+         }
+     }
+     &__right {
+         @media (max-width: $md - 1) {
+             margin-top: 10px;
+         }
+     }
+     &__title {
+         color: #AAAAAA;
+     }
+     &__code {
+         font-weight: 600;
+         color: inherit;
+     }
+     &__total span {
+         font-weight: 600;
+     }
+     &__completed {
+         margin-left: 16px;
+     }
+     &__body {
+         padding: 25px 22px;
+         border: 1px solid #E4E4E4;
+         box-sizing: border-box;
+         border-radius: 0px 0px 4px 4px;
+         border-top: none;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         @media (max-width: $md - 1) {
+             display: block;
+         }
+         @media (max-width: $sm - 1) {
+             font-size: 12px;
+             padding: 16px 15px;
+         }
+     }
+     &__block {
+         display: flex;
+         max-width: 46%;
+         @media (max-width: $md - 1) {
+             max-width: none;
+             display: grid;
+             grid-template-columns: 1fr 1fr;
+             &:not(:last-child) {
+                 margin-bottom: 20px;
+             }
+         }
+         &--1 {
+             width: 16%;
+             @media (max-width: $md - 1) {
+                 width: auto;
+             }
+         }
+         &--2 {
+             width: 20%;
+             @media (max-width: $md - 1) {
+                 width: auto;
+             }
+         }
+         &--3 {
+             width: 35%;
+             @media (max-width: $md - 1) {
+                 width: auto;
+             }
+         }
+         &--4 {
+             @media (max-width: $md - 1) {
+                 display: block;
+             }
+         }
+     }
+     &__prop {
+         margin-right: 16px;
+         color: #AAAAAA;
+     }
+     &__status {}
+     &__link {
+         font-weight: 600;
+         font-size: 16px;
+         color: $c-primary;
+         transition: all .3s ease;
+         &:hover {
+             @media (min-width: 1024px) {
+                 cursor: pointer;
+                 opacity: 0.7;
+             }
+         }
+         @media (max-width: $sm - 1) {
+             font-size: 12px;
+         }
+     }
+ }
+ 
+ .personal-history {
+     &__item {
+         &:not(:last-child) {
+             margin-bottom: 30px;
+         }
+     }
+ }
+ 
+ .personal-history-detail {
+     &__header {
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         font-size: 16px;
+         font-weight: 600;
+         padding: 8px 22px;
+         background-color: #F6F6F6;
+         border: 1px solid #E4E4E4;
+         box-sizing: border-box;
+         border-radius: 4px 4px 0px 0px;
+         @media (max-width: $sm - 1) {
+             font-size: 14px;
+             flex-direction: column;
+             align-items: flex-start;
+             padding: 8px 15px;
+         }
+         &-left {}
+         &-right {
+             color: $c-primary-2;
+             @media (max-width: $sm - 1) {
+                 margin-top: 10px;
+                 display: none;
+             }
+         }
+     }
+     &__body {
+         padding: 24px 22px;
+         @media (max-width: $sm - 1) {
+             padding: 21px 15px;
+         }
+     }
+     &__row {
+         display: flex;
+         margin: 0px -20px;
+         @media (max-width: $sm - 1) {
+             margin: 0px;
+             flex-direction: column;
+         }
+     }
+     &__col {
+         width: 100%;
+         flex-grow: 1;
+         padding: 0px 20px;
+         @media (max-width: $sm - 1) {
+             padding: 0px;
+             display: flex;
+             margin: 0px -10px;
+             margin-bottom: 20px;
+             &>div {
+                 width: 50%;
+                 padding: 0px 10px;
+             }
+         }
+     }
+     &__val {}
+     &__prop {
+         margin-bottom: 10px;
+         color: #AAAAAA;
+         @media (max-width: $sm - 1) {
+             margin-bottom: 0px;
+         }
+     }
+     &__grid {
+         display: grid;
+         grid-template-columns: auto 1fr;
+         .personal-history-detail__prop {
+             margin-bottom: 12px;
+             margin-right: 36px;
+         }
+     }
+     &__pay {
+         margin-top: 20px;
+     }
+     &__total {
+         margin-top: 30px;
+         display: grid;
+         grid-template-columns: auto auto;
+         justify-content: flex-end;
+         @media (max-width: $sm - 1) {
+             justify-content: flex-start;
+             grid-template-columns: 1fr 1fr;
+             padding: 0px 15px;
+             margin-top: 20px;
+         }
+         .personal-history-detail__val {
+             margin-left: 100px;
+             @media (max-width: $sm - 1) {
+                 margin-bottom: 20px;
+                 margin-left: 20px;
+             }
+         }
+         .personal-history-detail__prop {
+             @media (max-width: $sm - 1) {
+                 margin-bottom: 20px;
+             }
+         }
+     }
+     &__bold {
+         font-size: 18px;
+         font-weight: 600;
+         color: #2B2A29;
+     }
+     &__repeat-mobile {
+         display: none;
+         padding: 0px 15px;
+         @media (max-width: $sm - 1) {
+             display: block;
+             margin-top: 15px;
+         }
+     }
+ }
+ 
+ .personal-history-detail-table {
+     &__head {
+         padding-top: 0px;
+         padding-bottom: 12px;
+         display: grid;
+         grid-template-columns: 50% 16.66% 16.66% 16.66%;
+         border-bottom: 1px solid #E4E9E1;
+         margin: 0px -12px;
+         &-item {
+             display: flex;
+             padding: 12px 12px;
+             @media (max-width: $sm - 1) {
+                 padding: 0px;
+                 margin-bottom: 8px;
+             }
+             &:last-child {
+                 @media (max-width: $sm - 1) {
+                     padding-top: 6px;
+                     border-top: 1px solid #E4E4E4;
+                 }
+             }
+             &:nth-last-child(2) {
+                 @media (max-width: $sm - 1) {
+                     display: inline-block;
+                     width: 40%;
+                     white-space: nowrap;
+                 }
+             }
+             &:nth-last-child(3) {
+                 @media (max-width: $sm - 1) {
+                     display: inline-block;
+                     width: 40%;
+                     white-space: nowrap;
+                 }
+             }
+         }
+         @media (max-width: $sm - 1) {
+             display: block;
+             padding-left: 95px;
+             position: relative;
+             padding-top: 16px;
+             padding-bottom: 16px;
+         }
+     }
+     &__td {
+         margin: 0px -12px;
+         .personal-history-detail-table__head-item {
+             padding: 0px 12px;
+             color: #AAAAAA;
+         }
+         @media (max-width: $sm - 1) {
+             display: none;
+         }
+     }
+     &__image {
+         width: 77px;
+         height: 77px;
+         flex: 0 0 auto;
+         @media (max-width: $md - 1) {
+             width: 72px;
+             height: 72px;
+         }
+         @media (max-width: $sm - 1) {
+             position: absolute;
+             left: 0;
+             top: 16px;
+         }
+         img {
+             max-height: 100%;
+             max-width: 100%;
+         }
+     }
+     &__code {
+         color: #AAAAAA;
+         margin-top: 9px;
+         @media (max-width: $sm - 1) {
+             margin-top: 4px;
+             margin-bottom: 7px;
+             line-height: 24px;
+         }
+     }
+     &__content {
+         margin-left: 30px;
+         @media (max-width: $md - 1) {
+             margin-left: 23px;
+         }
+         @media (max-width: $sm - 1) {
+             margin-left: 0px;
+         }
+     }
+     &__title {
+         font-size: 16px;
+         color: rgb(43, 42, 41);
+			a{
+				color: rgb(43, 42, 41);
+				&:hover{
+				@media (min-width: 1024px){
+				cursor: pointer;
+					color: $c-primary;
+				}
+				}
+			}
+     }
+     &__price {
+         font-weight: 600;
+     }
+     &__count {
+         color: #AAAAAA;
+     }
+     &__price-mobile {
+         display: none;
+         @media (max-width: $sm - 1) {
+             display: block;
+             margin-right: 13px;
+             line-height: 18px;
+         }
+     }
+ }

@@ -1,0 +1,349 @@
++include-script('header')
++include-script('ajax')
+
+header
+    .header-top.js-header-top
+        .header-notification.js-header-notification.header-notification.fz-15
+            .container
+                .header-notification__inner
+                    .header-notification__left
+                        .header-notification__icon
+                            +icon('i-warning')(style="width: 24px; height:24px")
+                        .header-notification__title Уважаемые покупатели, обращаем ваше внимание, что пункт самовывоза работает в тестовом режиме. Но мы стараемся и с каждым днем становимся все лучше!
+                    .header-notification__right
+                        .header-notification__control.js-header-notification-close
+                            .header-notification__control-title Закрыть
+                            .header-notification__control-icon
+                                +icon('i-close')(style="width:24px; height:24px")
+        .header-mobile-logo
+            .container
+                .header-mobile-logo__inner
+                    <picture class=" index-slider__img-wrap">
+                    <source  media="(min-width: 1100px)"  srcset= 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=='>
+                    <source media="(min-width: 0px)"  srcset="/local/templates/html/images/header-logo-mobile.svg">
+                    img(src="/local/templates/html/images/header-logo.svg" alt="")
+                    </picture>
+        .header-top__inner-wrap
+            .container
+
+                .header-top__inner
+                    .header-top__left
+                        +nav({
+                            mod: 'nav--header-top fz-15',
+                            list: [
+                                {name: 'О компании'},
+                                {name: 'Оплата'},
+                                {name: 'Доставка'},
+                                {name: 'Клиентам'},
+                                {name: 'Новости'},
+                            ]
+                        })
+                    .header-top__right
+                        .header-panel.fz-16
+                            .header-panel__item.header-panel--phone
+                                a(href="tel:+375 (17) 388-00-22").header-panel__title
+                                    span +375 (17) 388-00-22
+                                    +icon('i-small-arrow')(style="width:24px; height:10px")
+                                .header-dropdown
+                                    .header-dropdown__phones.fz-18
+                                        include ../phones-list/phones-list
+                                    .header-dropdown__item
+                                        +icon('i-location')(style="width: 24px; height: 24px")
+                                        .header-dropdown__contacts г. Минск, просп. Победителей 106-11, пом. П-14
+                                    .header-dropdown__item
+                                        +icon('i-timetable')(style="width: 24px; height: 24px")
+                                        .header-dropdown__timetable
+                                            .header-dropdown__timetable-prop Будние:
+                                            .header-dropdown__timetable-val 09:00-20:00
+                                            .header-dropdown__timetable-prop Выходные:
+                                            .header-dropdown__timetable-val 10:00-19:00
+                                    .header-dropdown__control(data-toggle="modal" data-target="#modal-feedback")
+                                        .btn.btn--primary.btn--fw
+                                            span Заказать звонок
+                                    .header-dropdown__control(data-toggle="modal" data-target="#modal-message")
+                                        .btn.btn--wide
+                                            span Написать сообщение
+                            //- .header-panel__item.header-panel--logout
+                            //- 	.header-panel__title Войти
+                            //- 	+icon('i-small-arrow')(style="width:24px; height:10px; transform: rotate(-90deg)")
+                            .header-panel__item.header-panel--login(data-toggle="modal" data-target="#modal-auth")
+                                +icon('i-login')(style="width:24px; height:24px;")
+                                .header-panel__title Игорь Повшок
+    .header-sticky.js-header-sticky
+        .header-sticky__inner
+            .header-mid
+                .container
+                    .header-mid__inner
+                        .header-mid__left
+                            .header-mid__logo
+                                .header-mid__logo-img
+                                    <picture class=" index-slider__img-wrap">
+                                    <source  media="(min-width: 1100px)"  srcset="/local/templates/html/images/header-logo.svg">
+                                    <source media="(min-width: 0px)" srcset= 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==' >
+                                    img(src="/local/templates/html/images/header-logo.svg" alt="")
+                                    </picture>
+                                .header-mid__logo-descr Самый быстрый интернет-магазин на 1С-Битрикс
+                        .header-mid__center
+                            .header-mid__catalog
+                                .btn.btn--catalog.js-popup-catalog(data-ajax-src="/local/templates/html/components-template/slam-catalog-menu/ajax__slam-catalog-menu.html" data-ajax-target=".header-catalog" aria-label="открыть меню")
+                                    include ../burger/burger
+                                    span Каталог
+                            .header-mid__search
+                                form.header-search
+                                    .header-search__input
+                                        +input({
+                                            type: 'text',
+                                            name: false,
+                                            small: false,
+                                            placeholder: 'Поиск товара',
+                                            required: false,
+                                            validation: {
+                                                message: 'Заполните поле',
+                                                regexp: 'Неверный формат',
+                                                emailaddress: ' ',
+                                                identical: false
+                                            }
+                                        })
+                                    .header-search__submit
+                                        +icon('i-search')(style="width:32px; height: 32px")
+
+                        .header-mid__right
+                            .header-status-bar
+                                .header-mobile.header-mobile-menu.js-mobile-catalog(data-ajax-src= "/local/templates/html/components-template/slam-catalog-menu/ajax__slam-catalog-menu.html" data-ajax-target=".mob-menu__ajax")
+                                    +icon('i-mobile-burger')(style="width:32px; height: 32px")
+                                .header-mobile.header-mobile-search
+                                    +icon('i-search')(style="width:32px; height: 32px")
+                                .header-mobile.header-mobile-profile
+                                    +icon('i-profile-mobile')(style="width:32px; height:32px;")
+                                .header-status-bar__item.hidden
+                                    .header-status-bar__favourites
+                                        .header-status-bar__icon
+                                            +icon('i-heart')(style="width: 32px; height: 32px")
+                                .header-status-bar__item.active
+                                    .header-status-bar__favourites
+                                        .header-status-bar__icon
+                                            +icon('i-heart-fill')(style="width: 32px; height: 32px")
+                                            .header-status-bar__count 2
+                                .header-status-bar__item.hidden
+                                    .header-status-bar__icon
+                                        +icon('i-cart')(style="width: 32px; height: 32px")
+                                .header-status-bar__item.active.js-show-mini-basket
+                                    .header-status-bar__icon
+                                        +icon('i-cart-fill')(style="width: 32px; height: 32px")
+                                        .header-status-bar__count 2
+                                    .header-status-bar__descr 205.00 BYN
+                            include ../mini-basket/mini-basket-empty
+                            include ../mini-basket/mini-basket
+
+            .container
+                .header-catalog
+                    +include-script('slam-catalog-menu')
+                    +include-style('slam-catalog-menu')
+            .container
+                .search-results
+                    .search-results__inner
+                        .search-results__scroll
+                            .search-results__close
+                                +icon('i-close')(style="width: 24px; height: 24px")
+                            .search-results__left
+                                .search-results__block
+                                    .search-results__title Категории
+                                    .search-results-tags
+                                        a(href="#").search-results-tags__item Все разделы (115)
+                                        a(href="#").search-results-tags__item.active Аксессуары (25)
+                                        a(href="#").search-results-tags__item Видеокамеры (62)
+                                        a(href="#").search-results-tags__item Блоки питания и батареи (36)
+                                        a(href="#").search-results-tags__item Видеорегистраторы (9)
+                                        a(href="#").search-results-tags__item Зарядные устройства (18)
+                                        a(href="#").search-results-tags__item Колонки (5)
+                                        a(href="#").search-results-tags__item Наушники (30)
+                                        a(href="#").search-results-tags__item Мобильные телефоны (98)
+                                        .nav-show-more.show-more.js-show-more-tags
+                                            span Смотреть ещё
+                                            +icon('i-arrow-small')(style="width:10px; height: 10px;")
+                                .search-results__block
+                                    .search-results__title Популярные разделы
+                                    include ../catalog-side-menu/catalog-side-menu-search
+                            .search-results__right
+                                .search-results__top
+                                    .search-results__title Найденные разделы
+                                    .search-results__sections
+                                        a(href='#').search-results__sections-item Умные часы
+                                        a(href='#').search-results__sections-item Часы
+                                        a(href='#').search-results__sections-item Умные часы
+                                        a(href='#').search-results__sections-item Часы
+                                        a(href='#').search-results__sections-item Умные часы
+                                        a(href='#').search-results__sections-item Часы
+                                        a(href='#').search-results__sections-item Умные часы
+                                        a(href='#').search-results__sections-item Часы
+                                        a(href='#').search-results__sections-item Умные часы
+                                        a(href='#').search-results__sections-item Часы
+                                .search-results__list
+                                    .search-results__title Найденные товары
+                                    .search-results__cards
+                                        +search-results-card({
+                                            type: 1
+                                        })
+                                        +search-results-card({
+                                            type: 2
+                                        })
+                                        +search-results-card({
+                                            type: 3
+                                        })
+                                        +search-results-card({
+                                            type: 4
+                                        })
+
+                                        //- .search-results-card
+                                        //- 	.search-results-card__labels
+                                        //- 		<div class="product-card__label product-card__discount">-12%</div>
+                                        //- 		<div class="product-card__label product-card__label--blue">Новинка</div>
+                                        //- 		<div class="product-card__label product-card__label--green">Хит</div>
+                                        //- 		<div class="product-card__label product-card__label--orange">Акция</div>
+                                        //- 		<div class="product-card__label product-card__label--pink">Рекомендуем</div>
+                                        //- 	.search-results-card__image
+                                        //- 		img(src="/local/templates/html/images/search-result-card.png", alt="")
+                                        //- 	.search-results-card__content
+                                        //- 		a(href='#').search-results-card__title Умные часы Huawei Watch GT 3 Elegant 42 мм
+                                        //- 		.search-results-card__code Артикул:14515.4
+                                        //- 	.search-results-card__price-wrap
+                                        //- 		<div class="product-card__price-current product-card__price--discount fz-16">205.00 BYN</div>
+                                        //- 		<div class="product-card__price-old fz-15">244.00 BYN</div>
+                                        //- 	.search-results-card__status
+                                        //- 		<div class="product-card__availability product-card__availability--available">В наличии</div>
+                                        //- 	.search-results-card__control
+                                        //- 		+counter()
+                                        //- 		.search-results-card__add-to-cart
+                                        //- 			+icon('i-cart-3')(style="width:26; height: 26px")
+                                        //- 			.search-results-card__count 2
+                                        //- .search-results-card
+                                        //- 	.search-results-card__labels
+                                        //- 		<div class="product-card__label product-card__discount">-12%</div>
+                                        //- 		<div class="product-card__label product-card__label--blue">Новинка</div>
+                                        //- 		<div class="product-card__label product-card__label--green">Хит</div>
+                                        //- 		<div class="product-card__label product-card__label--orange">Акция</div>
+                                        //- 		<div class="product-card__label product-card__label--pink">Рекомендуем</div>
+                                        //- 	.search-results-card__image
+                                        //- 		img(src="/local/templates/html/images/search-result-card.png", alt="")
+                                        //- 	.search-results-card__content
+                                        //- 		a(href='#').search-results-card__title Умные часы Huawei Watch GT 3 Elegant 42 мм
+                                        //- 		.search-results-card__code Артикул:14515.4
+                                        //- 	.search-results-card__price-wrap
+                                        //- 		<div class="product-card__price-current fz-16">Нет в продаже</div>
+                                        //- 	.search-results-card__status
+                                        //- 		<div class="product-card__availability product-card__availability--order">Под заказ</div>
+                                        //- 	.search-results-card__control
+                                        //- 		a(href='#').btn.btn--wide Посмотреть аналоги
+                                        //- .search-results-card
+                                        //- 	.search-results-card__labels
+                                        //- 		<div class="product-card__label product-card__discount">-12%</div>
+                                        //- 		<div class="product-card__label product-card__label--blue">Новинка</div>
+                                        //- 		<div class="product-card__label product-card__label--green">Хит</div>
+                                        //- 		<div class="product-card__label product-card__label--orange">Акция</div>
+                                        //- 		<div class="product-card__label product-card__label--pink">Рекомендуем</div>
+                                        //- 	.search-results-card__image
+                                        //- 		img(src="/local/templates/html/images/search-result-card.png", alt="")
+                                        //- 	.search-results-card__content
+                                        //- 		a(href='#').search-results-card__title Умные часы Huawei Watch GT 3 Elegant 42 мм
+                                        //- 		.search-results-card__code Артикул:14515.4
+                                        //- 	.search-results-card__price-wrap
+                                        //- 		<div class="product-card__price-current fz-16">749.00 BYN</div>
+                                        //- 	.search-results-card__status
+                                        //- 		<div class="product-card__availability product-card__availability--unavailable">Нет в наличии</div>
+                                        //- 	.search-results-card__control.search-results-card__control--col
+                                        //- 		a(href='#').btn.btn--wide Подробнее
+                                        //- 		a(href='#').search-results-card__link Сообщить о поступлении
+                                        //- .search-results-card
+                                        //- 	.search-results-card__labels
+                                        //- 		<div class="product-card__label product-card__discount">-12%</div>
+                                        //- 		<div class="product-card__label product-card__label--blue">Новинка</div>
+                                        //- 		<div class="product-card__label product-card__label--green">Хит</div>
+                                        //- 		<div class="product-card__label product-card__label--orange">Акция</div>
+                                        //- 		<div class="product-card__label product-card__label--pink">Рекомендуем</div>
+                                        //- 	.search-results-card__image
+                                        //- 		img(src="/local/templates/html/images/search-result-card.png", alt="")
+                                        //- 	.search-results-card__content
+                                        //- 		a(href='#').search-results-card__title Умные часы Huawei Watch GT 3 Elegant 42 мм
+                                        //- 		.search-results-card__code Артикул:14515.4
+                                        //- 	.search-results-card__price-wrap
+                                        //- 		<div class="product-card__price-current fz-16">749.00 BYN</div>
+                                        //- 	.search-results-card__status
+                                        //- 		<div class="product-card__availability product-card__availability--out">Снят с производства</div>
+                                        //- 	.search-results-card__control
+                                        //- 		+counter()
+                                        //- 		.btn.btn--color Под заказ
+                                include ../pagination/pagination
+                                a(href="#").search-results__more
+                                    span Смотреть ещё
+                                    +icon('i-arrow-small')(style="width:12px; height: 12px; transform: rotate(90deg)")
+            .header-bottom.js-header-bottom
+                .container
+                    .header-bottom__inner
+                        +nav({
+                            mod: 'nav--header-bottom fz-16',
+                            list: [
+                                {name: 'Популярные товары', active: true},
+                                {name: 'Подарки '},
+                                {name: 'Бренды'},
+                                {name: 'Новинки'},
+                                {name: 'Акции'},
+                                {name: 'Хиты продаж'},
+                            ]
+                        })
+    .mob-menu.js-mob-menu
+        .mob-menu__header
+            .mob-menu__close.js-mob-menu-close
+                +icon('i-close')(style="width:24px; height:24px")
+        .mob-menu__inner
+            .mob-menu__catalog
+                .mob-menu__catalog-title.js-slide-mobile-catalog
+                    span Каталог
+                    .mob-menu__catalog-toggle
+                .mob-menu__ajax
+
+            .mob-menu__nav
+                +nav({
+                    mod: 'nav--mobile nav-mobile--bold fz-15',
+                    list: [
+                        {name: 'Популярные товары'},
+                        {name: 'Подарки'},
+                        {name: 'Бренды'},
+                        {name: 'Новинки'},
+                        {name: 'Акции'},
+                        {name: 'Хиты продаж'},
+                    ]
+                })
+            .mob-menu__nav
+                +nav({
+                    mod: 'nav--mobile fz-15',
+                    list: [
+                        {name: 'О компании'},
+                        {name: 'Оплата'},
+                        {name: 'Доставка'},
+                        {name: 'Клиентам'},
+                        {name: 'Новости'},
+                    ]
+                })
+            .mob-menu__contacts
+                <div class="header-dropdown__timetable fz-14">
+                <div class="header-dropdown__timetable-prop">Будние: </div>
+                <div class="header-dropdown__timetable-val">09:00-20:00</div>
+                <div class="header-dropdown__timetable-prop">Выходные:</div>
+                <div class="header-dropdown__timetable-val">10:00-19:00</div>
+                </div>
+                include ../phones-list/phones-list
+            .mob-menu__social
+                .social-list
+                    a(href='#' aria-label='vk').social-list__item
+                        +icon('i-vk')(style="width:26px; height:26px")
+                    a(href='#' aria-label='fb').social-list__item
+                        +icon('i-fb')(style="width:26px; height:26px")
+                    a(href='#' aria-label='instagram').social-list__item
+                        | instagram
+                        +icon('i-inst')(style="width:26px; height:26px")
+                    a(href='#' aria-label='telegram').social-list__item
+                        | tg
+                        +icon('i-tg')(style="width:26px; height:26px")
+            .mob-menu__get-int-touch
+                .btn.btn--fw.btn--primary(data-toggle="modal" data-target="#modal-feedback")
+                    span Заказать звонок
