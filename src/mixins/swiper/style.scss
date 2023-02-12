@@ -1,4 +1,4 @@
-// @import 'src/assets/css/common/components-import';
+@import "src/assets/css/vars_mixins/vars_mixins";
 
 /**
  * Swiper 4.5.1
@@ -104,31 +104,35 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 86px;
 	padding: 0px;
 	color: $white;
 	font-family: $f-main;
 	font-weight: 400;
-	background: #fff;
-	font-size: 20px;
+	background: rgba($c-primary, .3);
+	//background-image: url("data:image/svg+xml,%3Csvg width='17' height='27' viewBox='0 0 17 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.4211 24.8421L3 13.4211L14.4211 2' stroke='white' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E%0A");
 	position: relative;
 	box-sizing: border-box;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	@include lineheight(20, 26);
+	transition: all ease .3s;
 
-	@media (min-width: $lg) {
+	@media (min-width: $md){
+		&:hover{
+			background: rgba($c-primary, .5);
+		}
 	}
 
 	.icon {
-		fill: $c-primary;
+		fill: transparent;
+		transform: scale(-1,1);
 	}
 
-	@media (max-width: $sm - 1) {
-		display: none;
-	}
+	//@media (max-width: $sm - 1) {
+	//	display: none;
+	//}
 }
 
 .swiper-button-next--nav,
@@ -503,20 +507,11 @@
 .swiper-button-prev {
 	position: absolute;
 	z-index: 10;
-	border: 1px solid #E4E4E4;
-	border-radius: 2px;
-	border-radius: 2px;
+	border-radius: 12px 0px 0px 12px;
 	top: 50%;
 	transform: translateY(-50%);
 
-	&:hover {
-		@media (min-width: 1024px) {
-			cursor: pointer;
-			transition: all 0.3s ease;
 
-			box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
-		}
-	}
 }
 
 .swiper-button-next {
@@ -526,5 +521,5 @@
 
 .swiper-button-prev {
 	left: 0;
-	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) rotate(180deg);
 }

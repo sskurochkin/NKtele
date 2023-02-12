@@ -15,21 +15,19 @@
 	font-size: 16px;
 	line-height: 1;
 	font-weight: 600;
-	border-radius: 3px;
-	height: 40px;
+	border-radius: 100px;
+	height: 54px;
+	padding: 0 36px;
+	border: 1px solid $c-primary;
 
 	&.disabled,
 	&[disabled] {
-		background-color: #aaaaaa;
+		background-color: #F0F0F0;
 		pointer-events: none;
 	}
 
 	span{
 		transition: all ease .1s;
-	}
-
-	@media (max-width: $md - 1) {
-		height: 34px;
 	}
 
 	svg {
@@ -46,27 +44,7 @@
 		}
 	}
 
-	@media (max-width: $sm - 1) {
-		font-size: 14px;
-	}
-
-	&--catalog {
-		padding: 4px 9px;
-
-		.icon {
-			margin-right: 4px;
-		}
-
-		&:hover {
-			@media (min-width: $md) {
-				cursor: pointer;
-				background-color: $c-primary-2;
-			}
-		}
-	}
-
 	&--primary {
-		padding: 0px 17px;
 		.icon {
 			fill: #fff;
 			margin-right: 10px;
@@ -79,106 +57,22 @@
 		}
 	}
 
-	&--gray {
-		padding: 0px 17px;
-		background-color: #dbdee2;
-		display: flex;
-		align-items: center;
-		.icon {
-			margin-left: 8px;
-		}
-		&[disabled] {
-			opacity: 0.5;
-			pointer-events: none;
-		}
-		&:hover {
-			@media (min-width: $md) {
-				cursor: pointer;
-				background-color: #c6c9ce;
-			}
-		}
-		a {
-			display: flex;
-			align-items: center;
-		}
-		* {
-			color: #fff;
-			fill: #fff;
-		}
+	&--sm{
+		height: 38px;
 	}
 
-	&--wide {
-		width: 100%;
+	&--outline{
 		background-color: transparent;
 		color: $c-primary;
-		border: 1px solid $c-primary;
-		display: flex;
-		justify-content: center;
-		padding: 0px 30px;
-
-		&:hover {
-			@media (min-width: 1024px) {
-				cursor: pointer;
-				color: #fff;
-				background-color: $c-primary;
+		@media (min-width: $md){
+			&:hover{
+				color: #ffffff;
 			}
 		}
-	}
-
-	&--fw {
-		width: 100%;
-	}
-
-	&--color {
-		border: 1px solid $c-primary-2;
-		padding: 0px 17px;
-		color: $c-primary-2;
-		transition: all 0.3s ease;
-		background-color: #fff;
-
-		&:hover {
-			@media (min-width: 1024px) {
-				cursor: pointer;
-				background-color: $c-primary-2;
-				color: #fff;
-			}
-		}
-	}
-
-	&--green {
-		background-color: #6bc684;
-
-		&:hover {
-			@media (min-width: 1024px) {
-				cursor: pointer;
-				background-color: #3f9e59;
-			}
-		}
-	}
-	&--text {
-		padding: 0px;
-		border: none;
-		height: auto;
-		color: $c-text;
-		background-color: transparent;
-		&:hover {
-			@media (min-width: 1024px) {
-				cursor: pointer;
-				color: $c-primary;
-			}
-		}
-	}
-	&--text2 {
-		padding: 0px;
-		border: none;
-		height: auto;
-		color: $c-primary;
-		background-color: transparent;
-		&:hover {
-			@media (min-width: 1024px) {
-				cursor: pointer;
-				color: $c-primary-hover;
-			}
+		&:disabled,
+		&.disabled{
+			border-color: #9C9C9C;
+			color: #9C9C9C;
 		}
 	}
 
