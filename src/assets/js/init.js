@@ -62,56 +62,56 @@ const uiInits = {
 			});
 		*/
 
-		window.oneevent = function (args = {}) {
-			if (!args.name) {
-				console.warn('vendorLoader: You must pass the name!');
-				return;
-			}
-			!window.vendor && (window.vendor = {});
-
-			//console.log(args.name)
-			window.vendor[args.name] = {};
-			window.vendor[args.name].enter = {};
-			window.vendor[args.name].enter.timeout;
-			window.vendor[args.name].enter.status = false;
-			window.vendor[args.name].enter.operator = function () {
-
-				if (!window.vendor[args.name].enter.status) {
-					window.vendor[args.name].enter.status = true;
-					clearTimeout(window.vendor[args.name].enter.timeout);
-					$(document).off('scroll.vendor-' + args.name);
-					$(document).off('click.vendor-' + args.name);
-					$(document).off('mouseover.vendor-' + args.name);
-					args.callback && args.callback()
-				}
-			};
-			if (args.event.scroll) {
-				$(document).on('scroll.vendor-' + args.name, function () {
-					window.vendor[args.name].enter.operator();
-				});
-				var doc = document.documentElement;
-				var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
-				top > 100 && window.vendor[args.name].enter.operator();
-			}
-
-			if (args.event.click) {
-				$(document).on('click.vendor-' + args.name, function () {
-					window.vendor[args.name].enter.operator();
-				});
-			}
-
-			if (args.event.mouseover) {
-				$(document).on('mouseover.vendor-' + args.name, args.event.mouseover.trigger, function () {
-					window.vendor[args.name].enter.operator();
-				});
-			}
-
-			if (args.event.timeout) {
-				window.vendor[args.name].enter.timeout = setTimeout(function () {
-					window.vendor[args.name].enter.operator();
-				}, args.event.timeout.delay || 3000)
-			}
-		}
+		// window.oneevent = function (args = {}) {
+		// 	if (!args.name) {
+		// 		console.warn('vendorLoader: You must pass the name!');
+		// 		return;
+		// 	}
+		// 	!window.vendor && (window.vendor = {});
+        //
+		// 	//console.log(args.name)
+		// 	window.vendor[args.name] = {};
+		// 	window.vendor[args.name].enter = {};
+		// 	window.vendor[args.name].enter.timeout;
+		// 	window.vendor[args.name].enter.status = false;
+		// 	window.vendor[args.name].enter.operator = function () {
+        //
+		// 		if (!window.vendor[args.name].enter.status) {
+		// 			window.vendor[args.name].enter.status = true;
+		// 			clearTimeout(window.vendor[args.name].enter.timeout);
+		// 			$(document).off('scroll.vendor-' + args.name);
+		// 			$(document).off('click.vendor-' + args.name);
+		// 			$(document).off('mouseover.vendor-' + args.name);
+		// 			args.callback && args.callback()
+		// 		}
+		// 	};
+		// 	if (args.event.scroll) {
+		// 		$(document).on('scroll.vendor-' + args.name, function () {
+		// 			window.vendor[args.name].enter.operator();
+		// 		});
+		// 		var doc = document.documentElement;
+		// 		var top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+		// 		top > 100 && window.vendor[args.name].enter.operator();
+		// 	}
+        //
+		// 	if (args.event.click) {
+		// 		$(document).on('click.vendor-' + args.name, function () {
+		// 			window.vendor[args.name].enter.operator();
+		// 		});
+		// 	}
+        //
+		// 	if (args.event.mouseover) {
+		// 		$(document).on('mouseover.vendor-' + args.name, args.event.mouseover.trigger, function () {
+		// 			window.vendor[args.name].enter.operator();
+		// 		});
+		// 	}
+        //
+		// 	if (args.event.timeout) {
+		// 		window.vendor[args.name].enter.timeout = setTimeout(function () {
+		// 			window.vendor[args.name].enter.operator();
+		// 		}, args.event.timeout.delay || 3000)
+		// 	}
+		// }
 
 	},
 	vendorLoader: function () {
@@ -131,7 +131,7 @@ const uiInits = {
 			}
 
 			!window.vendor && (window.vendor = {});
-			!window.SITE_TEMPLATE_PATH && (window.SITE_TEMPLATE_PATH = '/local/templates/html/');
+			!window.SITE_TEMPLATE_PATH && (window.SITE_TEMPLATE_PATH = '/dist/');
 
 			window.vendor[args.name] = {};
 			window.vendor[args.name].load = {};

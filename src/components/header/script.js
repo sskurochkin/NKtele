@@ -6,13 +6,12 @@ window.addEventListener('load', function() {
     document.documentElement.style.setProperty('--headerStickyHeight', $('.header-sticky__inner').height() + 'px');
 
     //hide notification and recalculate headerTopHeight for sticky header
-    $(document).on('click', '.js-header-notification-close', function() {
-        setCoockie('isHeaderNotificationShowed', '1', 86400);
-        $(this).closest('.header-notification').slideUp(100);
-        setTimeout(() => {
-            headerTopHeight = $('.js-header-top').height();
-        }, 100)
-    })
+    // $(document).on('click', '.js-header-notification-close', function() {
+    //     $(this).closest('.header-notification').slideUp(100);
+    //     setTimeout(() => {
+    //         headerTopHeight = $('.js-header-top').height();
+    //     }, 100)
+    // })
 
     const scrollHandler = () => {
         if ($(window).scrollTop() > scrollTop && $(window).scrollTop() > headerTopHeight) {
@@ -30,25 +29,7 @@ window.addEventListener('load', function() {
     window.addEventListener('scroll', scrollHandler);
 
 
-    $('.js-show-more-tags').click(function() {
-        $(this).closest('.search-results-tags').toggleClass('active');
-    })
 
-    $('.header-mobile-search').click(function() {
-        $('.header-mid__search').toggleClass('active');
-    })
-
-    $('.header-search__input .form-control')[0].addEventListener('focus', function() {
-        $('.search-results').addClass('active');
-        $('body').addClass('search-active')
-
-        window.reinit.closeCatalog()
-
-    })
-
-    $('.search-results__close').on('click', function(){
-        window.reinit.closeSearch()
-    })
 
 
     $(document).on('click keydown', function (ev) {

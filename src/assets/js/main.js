@@ -1,6 +1,5 @@
 import uiInits from './init';
 import lazy_img from '../../mixins/lazy-img/script';
-import lazy_video from '../../mixins/lazy-video/script';
 import slamJquey from './slamJquey';
 const ready = (callback) => {
 	document.readyState != "loading"
@@ -11,7 +10,6 @@ const ready = (callback) => {
 ready(() => {
 	uiInits.init();
 	lazy_img();
-	lazy_video();
 	slamJquey();
 	// const btn_toggle = require('../../mixins/btn-toggle/script');
 	// const lazy_img = require('../../mixins/lazy-img/script');

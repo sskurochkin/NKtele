@@ -23,13 +23,13 @@ mixin nav(args= {})
 		)
 
 	+include-style('nav')
-	+include-script('nav')
+
 	div.js-nav.nav(class= args.mod)
 		ul.nav-list
 			each item in args.list
 				li.nav-item(
 					class= item.active && 'active'
-					class= (item.list || item.big_nav) && 'has-nav'
+					class= 'link'
 					class= item.big_nav && 'has-nav--big'
 					class= item.disabled && 'disabled'
 				)

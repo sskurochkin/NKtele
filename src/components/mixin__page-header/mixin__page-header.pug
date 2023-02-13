@@ -1,0 +1,17 @@
+mixin page-header(args={})
+    section.page-header(class= args.mod)
+        .container
+            .page-header__inner
+                .page-header__left
+                    h1.page-header__title.fz-h1!= args.title
+                    p.page-header__subtitle!=args.subtitle
+                    if(args.btn)
+                        .page-header__btns
+                            a(href='#').btn.btn--primary Get prices
+                            a(href='#').btn.btn--outline Learn more
+                .page-header__right
+                    +lazy-img({
+                        img: args.img,
+                        placeholder: pixel
+                    })
+

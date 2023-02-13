@@ -1,33 +1,41 @@
 extends ../../layout/layout
 
 block vars
-	- var pageTitle = 'Главная'
-	- var pageBodyClass = 'index'
-	- var dir = './'
+    - var pageTitle = 'Главная'
+    - var pageBodyClass = 'index'
+    - var dir = './'
 
 
 block main
-	include ../../components/index-hero/index-hero
-	include ../../components/index-utp/index-utp
-	include ../../components/index-category/index-category
-	include ../../components/product-slider/product-slider
-	include ../../components/product-slider/product-slider-bg
-	include ../../components/index-banners/index-banners
-	include ../../components/product-slider/product-slider-news
-	include ../../components/index-brands/index-brands
-	include ../../components/index-about/index-about
-	include ../../components/index-news/index-news
-	include ../../components/instagram-section/instagram-section
+    +page-header({
+        title: 'Virtual Cloud Servers',
+        mod: 'page-header--index',
+        img:'/images/index-hero.svg',
+        subtitle: 'Powerful servers with high-end resources that will guarantee resource exclusivity, starting at just $90.22/mo',
+        btn: true
+    }
+    )
+
+    include ../../components/index-utp/index-utp
+    include ../../components/index-category/index-category
+    include ../../components/product-slider/product-slider
+    include ../../components/product-slider/product-slider-bg
+    include ../../components/index-banners/index-banners
+    include ../../components/product-slider/product-slider-news
+    include ../../components/index-brands/index-brands
+    include ../../components/index-about/index-about
+    include ../../components/index-news/index-news
+    include ../../components/instagram-section/instagram-section
 
 
 
 block vendorScripts
-	+vendorScripts-includer()
+    +vendorScripts-includer()
 block componentsStyles
-	+style-includer()
+    +style-includer()
 
 block componentsScripts
-	+componentsScripts-includer()
+    +componentsScripts-includer()
 
 block scripts
-	script(src="./js/vendor/swiper.min.js" defer)
+    script(src="./js/vendor/swiper.min.js" defer)

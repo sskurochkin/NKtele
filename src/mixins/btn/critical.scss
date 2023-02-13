@@ -19,6 +19,10 @@
 	height: 54px;
 	padding: 0 36px;
 	border: 1px solid $c-primary;
+	@media (max-width: $sm - 1) {
+		height: 46px;
+		padding: 0 24px;
+	}
 
 	&.disabled,
 	&[disabled] {
@@ -61,12 +65,24 @@
 		height: 38px;
 	}
 
+	&--color{
+		border-color: #ffffff;
+		height: 35px;
+		padding: 0 32px;
+		@media (min-width: $md){
+			&:hover{
+				background-color: $c-primary-hover;
+			}
+		}
+	}
+
 	&--outline{
 		background-color: transparent;
 		color: $c-primary;
 		@media (min-width: $md){
 			&:hover{
 				color: #ffffff;
+				background-color: $c-primary;
 			}
 		}
 		&:disabled,
