@@ -1,0 +1,20 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.section-title{
+	text-align: center;
+	padding: 80px 0 42px;
+	@media (max-width: $lg - 1) {
+		padding-top: 54px;
+	}
+	@media (max-width: $sm - 1) {
+		padding: 30px 0 24px;
+	}
+	&__subtitle{
+		font-size: 18px;
+		margin-top: 8px;
+		@media (max-width: $sm - 1) {
+			font-size: 16px;
+		}
+	}
+
+}

@@ -16,6 +16,10 @@
 	}
 }
 
+.bg-grad{
+	background: linear-gradient(180deg, #FFFFFF 0%, #E6F5FE 100%);
+}
+
 .show-more {
 	color: $c-primary-2;
 	position: relative;

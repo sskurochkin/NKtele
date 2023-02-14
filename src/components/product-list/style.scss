@@ -1,0 +1,11 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.product-list{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 40px 30px;
+	@media (max-width: $lg - 1) {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 36px 30px;
+	}
+}

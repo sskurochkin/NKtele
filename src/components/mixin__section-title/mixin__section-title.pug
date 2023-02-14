@@ -1,0 +1,7 @@
+mixin section-title(args={})
+    +include-style('mixin__section-title')
+    .section-title(class= args.mod)
+        .container
+            h2.section-title__title.fz-h2!=args.title
+            if(args.subtitle)
+                p.section-title__subtitle!=args.subtitle

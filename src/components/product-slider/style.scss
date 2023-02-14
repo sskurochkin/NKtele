@@ -1,167 +1,148 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
 
-.product-slider-section {}
-
-.product-slider {
-
-
-	z-index: unset !important;
-	height : 440px;
-	margin : 0px -10px;
-
-	@media (max-width: $xs - 1) {
-		overflow: hidden;
+.product-slider:not(.inited) {
+	.swiper-container {
+		overflow: visible;
 	}
 
-	@media (max-width: $md - 1) {
-		height      : auto;
-		margin      : 0px -4px;
-		margin-right: 0px;
-	}
+	.swiper-wrapper {
 
-	@media (max-width: $xs - 1) {
-		margin-right: -10px;
-	}
-
-	&__container {
-		&.swiper-container {
-			padding       : 16px 12px;
-			padding-bottom: 24px;
-			margin        : -16px -12px;
-			margin-bottom : -24px;
-			z-index       : 10;
-
-			@media (max-width: $md - 1) {
-				padding: 0px 0px;
-				margin : 0px 0px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 40px 30px;
+		@media (max-width: $lg - 1) {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 36px 30px;
+		}
+		@media (max-width: $md - 1) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 24px;
+		}
+		@media (max-width: $xs - 1) {
+			grid-template-columns: 1fr;
+			justify-items: center;
+			.product-card-wrap {
+				max-width: 300px;
 			}
 		}
 
 
 	}
+}
 
-	.product-card-wrap {
-		padding: 0px 12px;
-		width  : calc(100% / 5);
-		flex   : 0 0 auto;
+.product-slider {
+	&.inited {
+		z-index: unset !important;
+		margin: 0px -10px;
 
-		@media (max-width: $xl - 1) {
-			width: calc(100% / 4);
-		}
-
-		@media (max-width: $lg - 1) {
-			width: calc(100% / 3);
+		@media (max-width: $sm - 1) {
+			overflow: hidden;
 		}
 
 		@media (max-width: $md - 1) {
-			width  : 272px;
-			padding: 0px 4px;
-			display: flex;
+			height: auto;
+			margin: 0px -4px;
+			margin-right: 0px;
 		}
 
-		&--news {
-			width  : calc(100% / 4);
-			display: flex;
-
-			@media (max-width: $lg - 1) {
-				width: calc(100% / 3);
-			}
+		@media (max-width: $xs - 1) {
+			margin-right: -10px;
+		}
+		.swiper-container {
+			padding: 16px 12px;
+			padding-bottom: 24px;
+			margin: -16px -12px;
+			margin-bottom: -24px;
+			z-index: 10;
 
 			@media (max-width: $md - 1) {
-				width  : 272px;
+				padding: 0px 0px;
+				margin: 0px 0px;
+			}
+		}
+
+
+		.product-card-wrap {
+
+			@media (max-width: $sm - 1) {
+				flex-shrink: 0;
+				//width: 300px;
 				padding: 0px 4px;
 				display: flex;
 			}
+
+		}
+
+
+		.swiper-pagination {
+			display: none;
 		}
 	}
 
 
-	.swiper-pagination {
-		display: none;
-	}
-}
-
-.product-slider-section-bg {
-	padding         : 52px 0px;
-	background-color: #FAFAFB;
-
-	@media (max-width: $md - 1) {
-		padding: 40px 0px;
 	}
 
-	@media (max-width: $sm - 1) {
-		padding: 25px 0px;
-	}
-	@media (max-width: $xs - 1) {
-		padding: 15px 0;
-		&.section-margin-bg{
-			margin-top: 20px;
-		}
-	}
-}
-
-
-.product-slider-ajax-tabs {
-	margin-bottom : 22px;
-	padding-bottom: 20px;
-
-	@media (max-width: $sm - 1) {
-		margin-bottom : 8px;
-		padding-bottom: 25px;
-	}
-
-	&__inner {
-		display    : flex;
-		align-items: center;
-
-	}
-
-	overflow : auto;
-
-	&__item {
-		font-weight : 600;
-		font-size   : 24px;
-		margin-right: 32px;
-		color       : #AAAAAA;
-		position    : relative;
-		line-height : 1.25;
-		white-space : nowrap;
+	.product-slider-ajax-tabs {
+		margin-bottom: 22px;
+		padding-bottom: 20px;
 
 		@media (max-width: $sm - 1) {
-			font-size   : 14px;
-			margin-right: 16px;
+			margin-bottom: 8px;
+			padding-bottom: 25px;
 		}
 
-		&:after {
-			position        : absolute;
-			content         : '';
-			left            : 0;
-			right           : 100%;
-			bottom          : -6px;
-			height          : 3px;
-			background-color: $c-primary-2;
-			transition      : all .3s ease;
+		&__inner {
+			display: flex;
+			align-items: center;
 
 		}
 
-		&:hover {
-			@media (min-width: 1024px) {
-				cursor: pointer;
+		overflow: auto;
+
+		&__item {
+			font-weight: 600;
+			font-size: 24px;
+			margin-right: 32px;
+			color: #AAAAAA;
+			position: relative;
+			line-height: 1.25;
+			white-space: nowrap;
+
+			@media (max-width: $sm - 1) {
+				font-size: 14px;
+				margin-right: 16px;
+			}
+
+			&:after {
+				position: absolute;
+				content: '';
+				left: 0;
+				right: 100%;
+				bottom: -6px;
+				height: 3px;
+				background-color: $c-primary-2;
+				transition: all .3s ease;
+
+			}
+
+			&:hover {
+				@media (min-width: 1024px) {
+					cursor: pointer;
+
+					&:after {
+						right: 0;
+					}
+				}
+			}
+
+			&.active {
+				pointer-events: none;
+				color: inherit;
 
 				&:after {
 					right: 0;
 				}
+
 			}
-		}
-
-		&.active {
-			pointer-events: none;
-			color         : inherit;
-
-			&:after {
-				right: 0;
-			}
-
 		}
 	}
-}

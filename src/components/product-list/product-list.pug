@@ -1,0 +1,81 @@
++include-style('product-list')
+
+script.
+    //- remove on integration
+    setTimeout(() => {
+        $('.product-list').removeClass('preloader');
+    }, 2000)
+
+
+.product-list.preloader.preloader-list
+    .product-card-wrap
+        +product-card({
+            mod: 'vps'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'vps'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'vps'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'vps'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'vps'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'vps'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'vps'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'vps'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'vps'
+        })
+
+.product-list.preloader.preloader-list
+    .product-card-wrap
+        +product-card({
+            mod: 'dedicated'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'dedicated'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'dedicated'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'dedicated'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'dedicated'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'dedicated'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'dedicated'
+        })
+    .product-card-wrap
+        +product-card({
+            mod: 'dedicated'
+        })
+include ../pagination/pagination

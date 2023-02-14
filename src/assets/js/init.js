@@ -8,7 +8,7 @@ const uiInits = {
 		this.vendorLoader();
 		this.slider();
 		this.oneevent();
-		this.removeNoTransition();
+		// this.removeNoTransition();
 		this.frontCoockies();
 	},
 

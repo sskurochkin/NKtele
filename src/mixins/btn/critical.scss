@@ -5,7 +5,6 @@
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	transition: background 0.3s, color 0.3s, border 0.3s;
 	text-align: center;
 	white-space: nowrap;
 	text-decoration: none;
@@ -19,6 +18,7 @@
 	height: 54px;
 	padding: 0 36px;
 	border: 1px solid $c-primary;
+	transition: all ease .3s;
 	@media (max-width: $sm - 1) {
 		height: 46px;
 		padding: 0 24px;
