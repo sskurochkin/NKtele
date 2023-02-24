@@ -1,0 +1,26 @@
++include-style('map')
+
+section.map.section-margin.bg-grad
+    +section-title({
+        title: 'Geography',
+    })
+    .container
+        .map-inner
+            .map-legend
+            .map-container
+                .map-container__img
+                    +lazy-img({
+                        img: 'images/map.png'
+                    })
+                    .map-point
+                        .map-badge
+                            .map-badge__header Atlanta
+                            .map-badge__body
+                                p 659 Peachtree Street NE,
+                                p Atlanta, GA, USA, 30308
+                    .map-point.map-point--europe
+                        .map-badge
+                            .map-badge__header Amsterdam
+                            .map-badge__body
+                                p 659 Peachtree Street NE,
+                                p Amsterdam Netherlands

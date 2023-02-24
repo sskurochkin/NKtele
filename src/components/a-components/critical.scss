@@ -1,21 +1,5 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
 
-.section-margin {
-	margin-top: 100px;
-
-	@media (max-width: $lg - 1) {
-		margin-top: 94px;
-	}
-
-	@media (max-width: $md - 1) {
-		margin-top: 64px;
-	}
-
-	@media (max-width: $sm - 1) {
-		margin-top: 46px;
-	}
-}
-
 .bg-grad{
 	background: linear-gradient(180deg, #FFFFFF 0%, #E6F5FE 100%);
 }
@@ -59,15 +43,15 @@
 	}
 }
 
-.section-margin-bg {
-	margin-top: 60px;
+.section-margin{
+	padding-bottom: 80px;
 
-	@media (max-width: $md - 1) {
-		margin-top: 40px;
+	@media (max-width: $lg - 1) {
+		padding-bottom: 54px;
 	}
 
 	@media (max-width: $sm - 1) {
-		margin-top: 30px;
+		padding-bottom: 30px;
 	}
 }
 

@@ -1,0 +1,23 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.why{
+	&-list{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+		@media (max-width: $sm - 1) {
+			gap: 24px;
+			grid-template-columns: 1fr;
+		}
+		&--server{
+			grid-template-columns: 1fr 1fr;
+			gap: 42px 30px;
+			@media (max-width: $lg - 1) {
+				gap: 30px;
+			}
+			@media (max-width: $sm - 1) {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+}

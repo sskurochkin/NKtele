@@ -1,0 +1,40 @@
+
+
+
++include-style('why')
+
+
+
+
+
+section.why.section-margin
+    +section-title({
+        title: 'Why our server is perfect',
+        subtitle: 'Some of our benefits that customers get by choosing us'
+    })
+    .container
+        .why-list.why-list--server
+            .why-card-wrap
+                +why-card({
+                    title: 'Provision servers in 40 minutes',
+                    text: 'Popular server configurations are provisioned automatically in 40 minutes; estimated provisioning time is shown during the ordering process.',
+                    img: '/images/why/why-10.svg'
+                })
+            .why-card-wrap
+                +why-card({
+                    title: 'High performance network',
+                    text: 'Access to the IP networks of top carriers, including CenturyLink, Cogent, Telia and a selection of regional providers.',
+                    img: '/images/why/why-6.svg'
+                })
+            .why-card-wrap
+                +why-card({
+                    title: 'Tailor made solutions for your business',
+                    text: 'We provide a full suite of computing, storage, and network services with our main focus on single-tenant infrastructure solutions.',
+                    img: '/images/why/why-15.svg'
+                })
+            .why-card-wrap
+                +why-card({
+                    title: 'Best in class support included',
+                    text: 'On the average, our clients get the first response to their tickets in less than 15 minutes.',
+                    img: '/images/why/why-13.svg'
+                })

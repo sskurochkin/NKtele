@@ -1,0 +1,11 @@
+
+mixin why-card(args={})
+    +include-style('mixin__why-card')
+    .why-card(class=args.mod)
+        .why-card__img
+            +lazy-img({
+                img: args.img
+            })
+        .why-card__content
+            .why-card__title=args.title
+            .why-card__desc=args.text
