@@ -11,7 +11,7 @@ header
                             +icon('i-location')(style='width:24px; height: 24px')
                             span USA (Atlanta)
                         a(href='mailto:info@nktele.com').header-notification__link
-                            +icon('i-location')(style='width:24px; height: 24px')
+                            +icon('i-mail')(style='width:24px; height: 24px')
                             span info@nktele.com
                         a(href='').header-notification__link
                             +icon('i-tg')(style='width:24px; height: 24px')
@@ -25,8 +25,10 @@ header
             .container
                 .header-top__inner
                     .header-top__left
-                        a(href='').header-logo Nktele
-                    .header-top__right
+                        a(href='').header-logo
+                            img(src='/dist/images/logo.svg')
+                        include ../burger/burger
+                    .header-top__right(:class="!overflow ? '': 'active'")
                         +nav({
                             mod: 'nav--header-top',
                             list: [
@@ -42,3 +44,6 @@ header
                                 {name: 'News'},
                             ]
                         })
+                        .header-mob__btns
+                            .btn.btn--color Registration
+                            .btn.btn--color Enter

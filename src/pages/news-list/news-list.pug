@@ -1,31 +1,33 @@
 extends ../../layout/layout
 
 block vars
-	- var pageTitle = 'Новости'
-	- var pageBodyClass = ''
-	- var dir = './'
+    - var pageTitle = 'Новости'
+    - var pageBodyClass = ''
+    - var dir = './'
 
 
 block main
-	.container
-		+breadcrumb({
-			content2 : 'Новости'
-		})
-		+page-header-section({
-			title: "Новости",
-			sidemenu: false
-		})
-	include ../../components/news-list/news-list
+    +page-header({
+        title: 'Latest News And Events',
+        mod: '',
+        img: '/images/news-list.svg',
+        subtitle: 'The latest news and announcements about all our servers and services.',
+    }
+    )
+    .container
+        +breadcrumb({
+            content2: 'News'
+        })
+    include ../../components/news-list/news-list
 
 
 
 block vendorScripts
-	+vendorScripts-includer()
+    +vendorScripts-includer()
 block componentsStyles
-	+style-includer()
+    +style-includer()
 
 block componentsScripts
-	+componentsScripts-includer()
+    +componentsScripts-includer()
 
 block scripts
-	script(src="./js/vendor/swiper.min.js" defer)

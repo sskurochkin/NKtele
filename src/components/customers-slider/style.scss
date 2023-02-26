@@ -1,0 +1,46 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.customers-slider{
+	max-width: 1920px;
+	padding: 0 80px;
+	margin-bottom: 40px;
+	@media (max-width: $sm - 1) {
+		padding: 0 20px;
+	}
+	.swiper-button-prev{
+		left: 0px;
+		transform: translate(0, -50%);
+
+		@media (max-width: $sm - 1) {
+			display: none;
+		}
+	}
+	.swiper-button-next{
+		right: 0px;
+		transform: translate(0, -50%);
+		@media (max-width: $sm - 1) {
+			display: none;
+		}
+	}
+	.swiper-pagination{
+
+
+	}
+	.customers-card{
+		width: 180px;
+		height: 110px;
+		padding: 30px 24px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #FFFFFF;
+		border-radius: 10px;
+		@media (max-width: $sm - 1) {
+			padding: 22px;
+			width: 126px;
+			height: 75px;
+		}
+
+	}
+}

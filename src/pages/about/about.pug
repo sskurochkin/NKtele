@@ -1,0 +1,35 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = 'About'
+    - var pageBodyClass = ''
+    - var dir = './'
+
+
+block main
+    +page-header({
+        title: 'About',
+        mod: '',
+        img: '/images/about.svg',
+        subtitle: 'Bare metal servers with cloud flexibility. We offer reliable, high-performance Dell PowerEdge rack servers of the latest generations in seventeen data centers around the world.',
+    })
+
+    include ../../components/why/why-server
+    include ../../components/register/register
+    include ../../components/customers-slider/customers-slider
+    include ../../components/g-map/g-map
+
+
+
+
+
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts
+    script(src="./js/vendor/swiper.min.js" defer)

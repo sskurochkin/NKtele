@@ -1,0 +1,38 @@
++include-style('select')
+.container
+    .s-line
+        .a-select(x-data="{val: '1 month', items: ['1 month <span>$3,39</span>', '3 month <span>$3,39 (-3%)</span>', '6 month <span>$3,39 (-5%)</span>', '12 month <span>$3,39 (-10%)</span>'], show: false}")
+            .form-group
+                //.a-select__title.form-control-label.form-control-label--small Заголовок <span>*</span>
+                input(x-model='val' type='hidden' name='mySelect').form-control
+                .a-select__header(@click='show = true' @keydown.enter='show = !show' tabindex='3')(:class="{'active': show}")
+                    .a-select__header-val(x-html='val')
+                    .a-select__trigger(:class="{'active': show}")
+                        +icon('i-arrow-down')(style="width:26px;height:26px;")
+                .a-select__body(x-show='show' x-cloak='')
+                    .a-select__list(@click.away='show = false' :class="{'active': show}")
+                        template(x-for='item in items')
+                            .a-select__list-item(@click='val = item; show = false' :class="{'active': val == item}" x-html='item')
+
+        .toggler(x-data="{vps:true}")
+            .toggler-item.toggler-left(:class="{'active': vps}" @click="vps=true") VPS/VDS
+            .toggler-item.toggler-right(:class="!vps?'active':''" @click="vps=false") Dedicated server
+
+
+
+        .a-select(x-data="{val: 'Netherlands - Amsterdam', items: ['Netherlands - Amsterdam', 'USA - Atlanta'], show: false}")
+            .form-group
+                //.a-select__title.form-control-label.form-control-label--small Заголовок <span>*</span>
+                input(x-model='val' type='hidden' name='mySelect').form-control
+                .a-select__header(@click='show = true' @keydown.enter='show = !show' tabindex='3')(:class="{'active': show}")
+                    .a-select__header-val(x-html='val')
+                    .a-select__trigger(:class="{'active': show}")
+                        +icon('i-arrow-down')(style="width:26px;height:26px;")
+                .a-select__body(x-show='show' x-cloak='')
+                    .a-select__list(@click.away='show = false' :class="{'active': show}")
+                        template(x-for='item in items')
+                            .a-select__list-item(@click='val = item; show = false' :class="{'active': val == item}" x-html='item')
+
+        //include ../a-select/a-select
+        //include ../a-select/a-select
+

@@ -1,0 +1,47 @@
++include-style('product-slider')
++include-script('product-slider')
+.product-slider-section
+    .product-slider-section__inner
+        +swiper({
+            container_mod: 'product-slider__container',
+            wrapper_mod: '',
+            navigation: true,
+            pagination: true,
+        }).product-slider.product-slider--main.js-slider-product-main
+            .product-card-wrap
+                +product-card({
+                    mod: 'vps'
+                })
+            .product-card-wrap
+                +product-card({
+                    mod: 'vps'
+                })
+            .product-card-wrap
+                +product-card({
+                    mod: 'vps'
+                })
+            .product-card-wrap
+                +product-card({
+                    mod: 'vps'
+                })
+            .product-card-wrap
+                +product-card({
+                    mod: 'vps'
+                })
+            .product-card-wrap
+                +product-card({
+                    mod: 'vps'
+                })
+            .product-card-wrap
+                +product-card({
+                    mod: 'vps'
+                })
+            .product-card-wrap
+                +product-card({
+                    mod: 'vps'
+                })
+            .product-card-wrap
+                +product-card({
+                    mod: 'vps'
+                })
+    include ../partners/partners

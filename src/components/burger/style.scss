@@ -1,10 +1,11 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
 
 .burger-icon{
-	width: 32px;
-	height: 32px;
-	margin-right: 4px;
+	width: 38px;
+	height: 24px;
+	//margin-right: 4px;
 	position: relative;
+	z-index: 3;
 	-webkit-transform: rotate(0deg);
 	-moz-transform: rotate(0deg);
 	-o-transform: rotate(0deg);
@@ -15,18 +16,17 @@
 	transition: .5s ease-in-out;
 	cursor: pointer;
 	@media (min-width: $xs){
-		height: 25px;
-		width: 32px;
+		height: 24px;
+		width: 38px;
 	}
 	span{
 		display: block;
 		position: absolute;
-		height: 2px;
-		right: 6px;
-		background: #fff;
-		border-radius: 2px;
+		height: 4px;
+		right: 0px;
+		background: $c-primary;
 		opacity: 1;
-		left: 6px;
+		left: 0px;
 		-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);
 		-o-transform: rotate(0deg);
@@ -37,31 +37,16 @@
 		transition: .25s ease-in-out;
 		&:nth-child(1){
 			top: 0px;
-			width: 40%;
-			margin: auto;
-			@media (min-width: $xs){
-				top: 6px;
-			}
 		}
 		&:nth-child(2){
-			top: 6px;
-			@media (min-width: $xs){
-				top: 12px;
-			}
+			top: 10px;
 		}
 		&:nth-child(3){
-			top: 6px;
-			@media (min-width: $xs){
-				top: 12px;
-			}
+			top: 10px;
 		}
 		&:nth-child(4){
-			top: 12px;
-			width: 40%;
-			margin: auto;
-			@media (min-width: $xs){
-				top: 18px;
-			}
+			top: 20px;
+
 		}
 	}
 	&.active{
@@ -76,14 +61,12 @@
 				transform: rotate(45deg);
 			}
 			&:nth-child(3){
-				top: 6px;
+				//top: 6px;
 				-webkit-transform: rotate(-45deg);
 				-moz-transform: rotate(-45deg);
 				-o-transform: rotate(-45deg);
 				transform: rotate(-45deg);
-				@media (min-width: $xs){
-					top: 12px;
-				}
+
 			}
 			&:nth-child(4){
 				display: none;

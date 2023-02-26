@@ -1,25 +1,27 @@
 extends ../../layout/layout
 
 block vars
-	- var pageTitle = 'Частые вопросы'
-	- var pageBodyClass = ''
-	- var dir = './'
+    - var pageTitle = '404'
+    - var pageBodyClass = ''
+    - var dir = './'
 
 
 block main
-	.container
-		include ../../components/404/404
-
-
-
+    +page-header({
+        title: '404 Not Found',
+        mod: 'page-header--404',
+        img: '/images/404.svg',
+        subtitle: 'This page does not exist or has been removed. Please use the navigation',
+    }
+    )
 
 block vendorScripts
-	+vendorScripts-includer()
+    +vendorScripts-includer()
 block componentsStyles
-	+style-includer()
+    +style-includer()
 
 block componentsScripts
-	+componentsScripts-includer()
+    +componentsScripts-includer()
 
 block scripts
-	script(src="./js/vendor/swiper.min.js" defer)
+    script(src="./js/vendor/swiper.min.js" defer)

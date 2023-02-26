@@ -1,0 +1,34 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = 'Dedicated'
+    - var pageBodyClass = ''
+    - var dir = './'
+
+
+block main
+    +page-header({
+        title: 'Dedicated servers',
+        mod: '',
+        img: '/images/servers.svg',
+        subtitle: 'We offer high-powered dedicated servers with cloud flexibility and scalability. We can provision and deploy a dedicated bare metal server in any of our data centers in the world in 40-minutes or less. You choose the model and configuration of a server.',
+    })
+
+    include ../../components/prices/prices
+    include ../../components/why/why-9
+    include ../../components/register/register
+    include ../../components/faq/faq
+
+
+
+
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts
+    script(src="./js/vendor/swiper.min.js" defer)

@@ -1,0 +1,18 @@
++include-style('g-map')
+
+section.g-map.section-margin
+    .container
+        .g-map-inner
+            .g-map__left
+                h2.section-title__title.fz-h2 Contacts
+                p.section-title__subtitle We are always in touch for any questions
+                .g-map__contacts
+                    a(href='mailto:info@nktele.com').g-map__link
+                        +icon('i-mail')(style='width:24px; height: 24px')
+                        span info@nktele.com
+                    .g-map__link
+                        +icon('i-location')(style='width:24px; height: 24px')
+                        span 7901 4th St N, STE 300 St. Petersburg , FL 33702
+            .g-map__right
+                .g-map__map
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.874782454018!2d-82.6381822!3d27.844386399999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88c2e71105ab6f6d%3A0x574a8a9e0e177675!2s7901%204th%20St%20N%20suite%20300%2C%20St.%20Petersburg%2C%20FL%2033702%2C%20%D0%A1%D0%A8%D0%90!5e0!3m2!1sru!2sby!4v1677414619411!5m2!1sru!2sby" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

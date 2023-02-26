@@ -8,6 +8,7 @@
 	}
 	@media (max-width: $sm - 1) {
 		padding-bottom: 30px;
+		padding-top: 20px;
 	}
 	&--index{
 		.page-header__left{
@@ -34,6 +35,15 @@
 		}
 
 	}
+	&--404{
+		padding-top: 60px;
+		@media (max-width: $sm - 1) {
+			padding-top: 32px;
+			.page-header__left{
+				order: -1;
+			}
+		}
+	}
 	&__inner{
 		display: grid;
 		grid-template-columns: 45% auto;
@@ -55,6 +65,7 @@
 		//padding-right: 40px;
 		@media (max-width: $sm - 1) {
 			padding-right: 0;
+			order: 2;
 		}
 
 	}

@@ -1,5 +1,5 @@
 +include-style('burger')
-span.burger-icon
+span.burger-icon(@click = "overflow=!overflow")(:class="!overflow ? '': 'active'")
 	span
 	span
 	span

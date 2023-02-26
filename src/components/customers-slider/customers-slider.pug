@@ -1,0 +1,59 @@
++include-style('customers-slider')
++include-script('customers-slider')
+section.customers-slider-section.section-margin.bg-grad
+    +section-title({
+        title:'4500+ Happy Customers'
+    })
+
+    .customers-slider-section__inner
+        +swiper({
+            container_mod: 'customers-slider__container',
+            wrapper_mod: '',
+            navigation: true,
+            pagination: true,
+        }).customers-slider.js-slider-customers
+            .customers-card-wrap
+                .customers-card
+                    +lazy-img({
+                        img: '/images/customers-1.svg'
+                    })
+            .customers-card-wrap
+                .customers-card
+                    +lazy-img({
+                        img: '/images/customers-2.svg'
+                    })
+            .customers-card-wrap
+                .customers-card
+                    +lazy-img({
+                        img: '/images/customers-3.svg'
+                    })
+            .customers-card-wrap
+                .customers-card
+                    +lazy-img({
+                        img: '/images/customers-1.svg'
+                    })
+            .customers-card-wrap
+                .customers-card
+                    +lazy-img({
+                        img: '/images/customers-2.svg'
+                    })
+            .customers-card-wrap
+                .customers-card
+                    +lazy-img({
+                        img: '/images/customers-3.svg'
+                    })
+            .customers-card-wrap
+                .customers-card
+                    +lazy-img({
+                        img: '/images/customers-1.svg'
+                    })
+            .customers-card-wrap
+                .customers-card
+                    +lazy-img({
+                        img: '/images/customers-2.svg'
+                    })
+            .customers-card-wrap
+                .customers-card
+                    +lazy-img({
+                        img: '/images/customers-3.svg'
+                    })

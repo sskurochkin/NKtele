@@ -193,10 +193,11 @@
 
 .swiper-pagination.swiper-pagination--line {
 	.swiper-pagination-bullet {
-		width: 79px;
-		height: 4px;
-		border-radius: 2px;
-		background-color: #005bab;
+		width: 16px;
+		height: 16px;
+		border: 1px solid $c-primary;
+		border-radius: 50%;
+		background-color: transparent;
 		margin: 0 6px;
 
 		&:not(.swiper-pagination-bullet-active):hover {
@@ -210,7 +211,7 @@
 }
 
 .swiper-pagination-bullet-active {
-	background: #aaaaaa;
+	background: $c-primary;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
@@ -442,12 +443,12 @@
 }
 
 .swiper-pagination-bullet {
-	width: 30px;
-	height: 2px;
-	border: 1px solid #aaaaaa;
+	width: 16px;
+	height: 16px;
+	border: 2px solid $c-primary;
+	border-radius: 50%;
 	background-color: transparent;
-	margin-right: 3px;
-	border-radius: 3px;
+	margin-right: 6px;
 
 	&:last-child {
 		margin-right: 0px;
@@ -459,8 +460,7 @@
 	}
 
 	&-active {
-		border-color: $c-primary-2;
-		background-color: $c-primary-2;
+		background-color: $c-primary;
 		pointer-events: none;
 	}
 

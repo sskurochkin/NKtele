@@ -2,13 +2,13 @@
 
 .breadcrumb {
 	overflow : hidden;
-	margin   : 38px 0 31px;
+	margin   : 24px 0 0;
 	font-size: rem(14);
 	@include lineheight(12, 16);
 	color      : $c-text;
 	font-weight: 400;
 	@media (max-width: $sm - 1){
-		margin: 14px 0px 22px;
+		margin-top: 30px;
 	}
 
 	&__list {
@@ -36,22 +36,21 @@
 
 		&:not(:first-child) {
 			&:before {
-				content            : '';
-				position           : absolute;
-				top                : calc(50% - 4px);
-				width: 8px;
-				height: 8px;
-				background-position: center;
-				background-repeat: no-repeat;
-				// font-size          : 12px;
-				font-weight        : 400;
-				// color              : rgba(39, 41, 55, 0.12);
+				content            : '/';
+				//position           : absolute;
+				//top                : calc(50% - 4px);
+				//width: 8px;
+				//height: 8px;
+				//background-position: center;
+				//background-repeat: no-repeat;
+				//// font-size          : 12px;
+				//font-weight        : 400;
+				 color              : #75787C;
 				// // transform          : translate(0, -50%);
-				background-image: url("data:image/svg+xml,%3Csvg width='5' height='9' viewBox='0 0 5 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.535645 8.07129L4.07118 4.53576L0.535645 1.00022' stroke='%232B2A29' stroke-linecap='round'/%3E%3C/svg%3E%0A");
-				left               : 0;
-				display            : block;
-				background-position: center;
-				background-size    : contain;
+				//background-image: url("data:image/svg+xml,%3Csvg width='5' height='9' viewBox='0 0 5 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.535645 8.07129L4.07118 4.53576L0.535645 1.00022' stroke='%232B2A29' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+				display            : inline-block;
+				//background-position: center;
+				//background-size    : contain;
 			}
 		}
 
@@ -62,17 +61,17 @@
 
 			.breadcrumb__link {
 				span{
-					color: #2B2A29;
+					color: $c-text;
 				}
 			}
 		}
 	}
 
 	&__link {
-		padding    : 0 10px 0 15px;
+		padding    : 0 5px 0 10px;
 		transition : color .3s;
 		white-space: nowrap;
-		color      : $c-text;
+		color      : #75787C;
 
 		&:hover {
 			span{
@@ -92,38 +91,38 @@
 	}
 
 }
-
-@media (max-width: $md - 1) {
-	.breadcrumb__item {
-	  &:first-child {
-		 display: none;
-	  }
-	  &:not(:first-child),
-	  &:not(:last-child)  {
-		 display: none;
-	 }
-	  &:nth-last-of-type(2) {
-			display: block !important;
-			a {
-	  color: #000;
-	  font-size: rem(14);
-	  &:after {
-		 display: none;
-	  }
-	}
-	  }
-	  &:last-child {
-		 display: none;;
-	  }
-	  &:before {
-		 transform: rotate(180deg);
-	  }
- 
-	  &:not(:first-child):before {
-		 top: 5px;
-		 transform: rotate(180deg);
-	  }
-	}
- 
- }
- 
+//
+//@media (max-width: $md - 1) {
+//	.breadcrumb__item {
+//	  &:first-child {
+//		 display: none;
+//	  }
+//	  &:not(:first-child),
+//	  &:not(:last-child)  {
+//		 display: none;
+//	 }
+//	  &:nth-last-of-type(2) {
+//			display: block !important;
+//			a {
+//	  color: #000;
+//	  font-size: rem(14);
+//	  &:after {
+//		 display: none;
+//	  }
+//	}
+//	  }
+//	  &:last-child {
+//		 display: none;;
+//	  }
+//	  &:before {
+//		 transform: rotate(180deg);
+//	  }
+//
+//	  &:not(:first-child):before {
+//		 top: 5px;
+//		 transform: rotate(180deg);
+//	  }
+//	}
+//
+// }
+//

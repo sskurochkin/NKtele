@@ -2,33 +2,20 @@
 
 .news-list {
 	&__inner {
-		display  : flex;
-		flex-wrap: wrap;
-		margin   : 0px -12px;
-
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 80px 30px;
+		@media (max-width: $md - 1) {
+			grid-template-columns: 1fr 1fr;
+			gap: 54px 30px;
+		}
 		@media (max-width: $xs - 1) {
-			margin: 0px;
+			grid-template-columns: 1fr;
+			gap: 24px;
 		}
 	}
 
 	.news-card-wrap {
-		padding      : 0px 12px;
-		width        : 25%;
-		margin-bottom: 42px;
-
-		@media (max-width: $lg - 1) {
-			width: 33.33%;
-		}
-
-		@media (max-width: $md - 1) {
-			width: 50%;
-		}
-
-		@media (max-width: $xs - 1) {
-			width        : auto;
-			padding      : 0px;
-			margin-bottom: 20px;
-		}
 	}
 
 

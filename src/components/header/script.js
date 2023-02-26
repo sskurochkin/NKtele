@@ -13,6 +13,15 @@ window.addEventListener('load', function() {
     //     }, 100)
     // })
 
+
+    (() => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        document.documentElement.style.setProperty('--headerHeight', `${$('header').height()}px`);
+    })();
+
+
+
     const scrollHandler = () => {
         if ($(window).scrollTop() > scrollTop && $(window).scrollTop() > headerTopHeight) {
             document.querySelector(".js-header-sticky").classList.add("header-sticky--sticky");

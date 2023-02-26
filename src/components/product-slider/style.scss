@@ -33,20 +33,20 @@
 .product-slider {
 	&.inited {
 		z-index: unset !important;
-		margin: 0px -10px;
+		//margin: 0px -10px;
 
 		@media (max-width: $sm - 1) {
-			overflow: hidden;
+			//overflow: hidden;
 		}
 
 		@media (max-width: $md - 1) {
 			height: auto;
-			margin: 0px -4px;
-			margin-right: 0px;
+			//margin: 0px -4px;
+			//margin-right: 0px;
 		}
 
 		@media (max-width: $xs - 1) {
-			margin-right: -10px;
+			//margin-right: -10px;
 		}
 		.swiper-container {
 			padding: 16px 12px;
@@ -56,7 +56,7 @@
 			z-index: 10;
 
 			@media (max-width: $md - 1) {
-				padding: 0px 0px;
+				padding: 16px 0px;
 				margin: 0px 0px;
 			}
 		}
@@ -82,67 +82,30 @@
 
 	}
 
-	.product-slider-ajax-tabs {
-		margin-bottom: 22px;
-		padding-bottom: 20px;
+.index-prices{
 
+	//padding: 50px;
+	.product-slider-section{
+		max-width: 1920px;
+		margin: 0 auto;
+		padding: 0 80px;
 		@media (max-width: $sm - 1) {
-			margin-bottom: 8px;
-			padding-bottom: 25px;
+			padding: 0 20px;
 		}
 
-		&__inner {
-			display: flex;
-			align-items: center;
 
-		}
-
-		overflow: auto;
-
-		&__item {
-			font-weight: 600;
-			font-size: 24px;
-			margin-right: 32px;
-			color: #AAAAAA;
-			position: relative;
-			line-height: 1.25;
-			white-space: nowrap;
+		.swiper-button-prev{
+			left: -45px;
 
 			@media (max-width: $sm - 1) {
-				font-size: 14px;
-				margin-right: 16px;
+				display: none;
 			}
-
-			&:after {
-				position: absolute;
-				content: '';
-				left: 0;
-				right: 100%;
-				bottom: -6px;
-				height: 3px;
-				background-color: $c-primary-2;
-				transition: all .3s ease;
-
-			}
-
-			&:hover {
-				@media (min-width: 1024px) {
-					cursor: pointer;
-
-					&:after {
-						right: 0;
-					}
-				}
-			}
-
-			&.active {
-				pointer-events: none;
-				color: inherit;
-
-				&:after {
-					right: 0;
-				}
-
+		}
+		.swiper-button-next{
+			right: -45px;
+			@media (max-width: $sm - 1) {
+				display: none;
 			}
 		}
 	}
+}

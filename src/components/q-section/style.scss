@@ -1,0 +1,33 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.q-section{
+	background-color: $c-primary;
+	color: #ffffff;
+	&__inner{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 24px;
+		.btn{
+			height: 54px;
+		}
+	}
+	&__descr{
+		display: flex;
+		flex-direction: column;
+		@media (max-width: $sm - 1) {
+			gap: 20px;
+		}
+		p{
+			font-size: 36px;
+			@media (max-width: $sm - 1) {
+				font-size: 24px;
+			}
+		}
+		span{
+			text-transform: uppercase;
+		}
+	}
+
+}

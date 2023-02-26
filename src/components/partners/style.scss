@@ -1,0 +1,29 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.partners{
+	margin-top: 40px;
+	//margin-bottom: 30px;
+	@media (max-width: $sm - 1) {
+		margin-top: 24px;
+		//margin-bottom: 20px;
+	}
+	&-title{
+		font-size: 24px;
+		margin-bottom: 24px;
+		text-align: center;
+		font-weight: 600;
+	}
+	&-line{
+		max-width: 800px;
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+		padding-bottom: 6%;
+		@media (max-width: $sm - 1) {
+			padding-bottom: 9%;
+		}
+		.lazy-img-wrap{
+			@include lazy()
+		}
+	}
+}
