@@ -1,0 +1,28 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = 'Privacy Policy'
+    - var pageBodyClass = ''
+    - var dir = './'
+
+
+block main
+    .container
+        +breadcrumb({
+            content2: 'Privacy Policy',
+        })
+        .row
+            .col-md-8.offset-md-1
+                include ../../components/policy/policy
+
+
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts
+    script(src="./js/vendor/swiper.min.js" defer)

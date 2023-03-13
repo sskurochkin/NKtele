@@ -11,5 +11,7 @@ mixin news-card(args={})
             .news-card__footer
                 .news-card__title.fz-h3 Choosebetween Dedicated or VPS Sbetween Dedicated or VPS Server
                 .news-card__descr If you are issuing an invoice for the first time, after that the system will prompt you to fill in the data about the payer. They include the name of the company / full name of an
-                .news-card__date 12 апреля 2021
+                .news-card__date
+                    +icon('i-calendar')(style="width:24px; height:24px")
+                    span 03.02.2023
                 a(href='#').btn.btn--primary.btn--sm Read more

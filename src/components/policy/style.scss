@@ -1,0 +1,65 @@
+@import "src/assets/css/vars_mixins/vars_mixins";
+
+.policy {
+	//&.section-margin{
+	//	padding-bottom: 0;
+	//}
+	line-height: 1.6;
+	&__title{
+		margin-bottom: 24px;
+		@media (max-width: $sm - 1) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__links{
+		column-count: 2;
+		margin-bottom: 16px;
+		//list-style-type: disc;
+		text-decoration: underline;
+		padding-left: 14px;
+		li{
+			list-style-type: disc;
+			margin-bottom: 8px;
+			a{
+				color: $c-text;
+			}
+		}
+		@media (max-width: $sm - 1) {
+			column-count: 1;
+		}
+	}
+	&__content{
+		margin-top: 32px;
+		@media (max-width: $sm - 1) {
+			margin-top: 24px;
+		}
+	}
+	&__block{
+
+		margin-bottom: 32px;
+		@media (max-width: $sm - 1) {
+			margin-bottom: 16px;
+		}
+		.fz-h3{
+			margin-bottom: 16px;
+			@media (max-width: $sm - 1) {
+				margin-bottom: 8px;
+			}
+		}
+		p{
+			&:not(:last-child){
+				margin-bottom: 16px;
+				@media (max-width: $sm - 1) {
+					margin-bottom: 8px;
+				}
+			}
+		}
+		&:not(:last-child){
+			margin-bottom: 24px;
+			@media (max-width: $sm - 1) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+}

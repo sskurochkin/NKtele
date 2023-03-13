@@ -1,0 +1,39 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = 'payment'
+    - var pageBodyClass = ''
+    - var dir = './'
+
+
+block main
+    +page-header({
+        title: 'Payment',
+        mod: '',
+        img: '/images/payment.svg',
+        subtitle: 'Ways of payment',
+    })
+
+    .page-wrap.section-margin
+        .container
+            .c-row
+                .c-col-l
+                    include ../../components/navleft/nav-p
+                .c-col-r
+                    include ../../components/payment/payment
+
+
+
+
+
+
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts
+    script(src="./js/vendor/swiper.min.js" defer)

@@ -27,6 +27,11 @@
 	}
 
 	background-color: #000000;
+	&-logo{
+		width: 190px;
+		height: 32px;
+		margin-bottom: 10px;
+	}
 
 	&-top {
 		display: flex;

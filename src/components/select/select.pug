@@ -1,6 +1,7 @@
 +include-style('select')
++include-script('select')
 .s-line
-    .a-select(x-data="{val: '1 month', items: ['1 month <span>$3,39</span>', '3 month <span>$3,39 (-3%)</span>', '6 month <span>$3,39 (-5%)</span>', '12 month <span>$3,39 (-10%)</span>'], show: false}")
+    .a-select(x-data="{val: '12 month', items: ['1 month <span>$3,39</span>', '3 month <span>$3,39 (-3%)</span>', '6 month <span>$3,39 (-5%)</span>', '12 month <span>$3,39 (-10%)</span>'], show: false}")
         .form-group
             //.a-select__title.form-control-label.form-control-label--small Заголовок <span>*</span>
             input(x-model='val' type='hidden' name='mySelect').form-control

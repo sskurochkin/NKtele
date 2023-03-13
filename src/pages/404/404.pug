@@ -15,13 +15,14 @@ block main
     }
     )
 
+
+
 block vendorScripts
     +vendorScripts-includer()
-block componentsStyles
-    +style-includer()
 
 block componentsScripts
     +componentsScripts-includer()
 
-block scripts
-    script(src="./js/vendor/swiper.min.js" defer)
+block componentsStyles
+    +style-includer()
+

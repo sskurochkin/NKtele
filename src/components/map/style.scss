@@ -20,20 +20,20 @@
 	&-point{
 		width: 1.2em;
 		height: 1.2em;
-		left: 21.5%;
-		bottom: 47.5%;
+		left: 25.5%;
+		bottom: 51%;
 		-webkit-border-radius: 50%;
 		-moz-border-radius: 50%;
 		border-radius: 50%;
 		background-color: #fff;
 		position: absolute;
 		@media (max-width: $lg - 1) {
-			left: 21.3%;
-			bottom: 47.4%;
+			left: 22.1%;
+			bottom: 51.4%;
 		}
 		&--europe{
-			left: 52.2%;
-			bottom: 64.2%;
+			left: 52.1%;
+			bottom: 63%;
 			@media (max-width: $lg - 1) {
 				left: 52%;
 				bottom: 64%;

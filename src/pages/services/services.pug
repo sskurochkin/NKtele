@@ -1,0 +1,39 @@
+extends ../../layout/layout
+
+block vars
+    - var pageTitle = 'Services'
+    - var pageBodyClass = ''
+    - var dir = './'
+
+
+block main
+    +page-header({
+        title: 'Additional services',
+        mod: '',
+        img: '/images/services.svg',
+        subtitle: 'The indicated prices are subject to change.Before ordering, we recommend that you clarify the current information in the chat.',
+    })
+    .page-wrap.section-margin
+        .container
+            .c-row
+                .c-col-l
+                    include ../../components/navleft/nav-s
+                .c-col-r
+                    include ../../components/services/services
+    include ../../components/customers-slider/customers-slider
+
+
+
+
+
+
+block vendorScripts
+    +vendorScripts-includer()
+block componentsStyles
+    +style-includer()
+
+block componentsScripts
+    +componentsScripts-includer()
+
+block scripts
+    script(src="./js/vendor/swiper.min.js" defer)

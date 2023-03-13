@@ -1,6 +1,9 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
 
 .news-list {
+	&__title{
+		margin-bottom: 36px;
+	}
 	&__inner {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);

@@ -23,7 +23,7 @@ import "../components/insta-section/script.js";
 import "../components/mixin__input-file/script.js";
 import "../components/mixin__product-card/script.js";
 import "../components/modal/script.js";
-import "../components/nav/script.js";
+import "../components/navleft/script.js";
 import "../components/pages-viget/script.js";
 import "../components/popup/script.js";
 import "../components/select/script.js";

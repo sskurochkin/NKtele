@@ -1,9 +1,54 @@
++include-style('content')
 +include-style('news-article')
-.news-article
-	.news-article__date 27 октября 2020
-	+include-style('content')
-	.content
-		img(src="https://picsum.photos/1920/500" alt="")
-		p Уважаемые партнеры, спешим уведомить вас о нашей новинке - ручка SALT LAKE CITY. Это металлическая ручка, особенностью которой является наличие стилуса, который поможет вам в управлении вашими гаджетами. Также наш склад пополнился ручками Cosmo, являющимися одними из самых популярных моделей у наших покупателей. По желанию на товар производится нанесение логотипа, надписи или полноцветного изображения в короткие сроки, наши опытные дизайнеры выполнят макет бесплатно (кроме дизайна календарей и полиграфических макетов с нуля.) Наши курьеры бесплатно привезут образцы товара для ознакомления. Готовый заказ доставляется бесплатно* по Москве и Санкт-Петербургу до двери заказчика на нашем фирменном транспорте.
-		img(src="https://picsum.photos/1920/500" alt="")
-		p Уважаемые партнеры, спешим уведомить вас о нашей новинке - ручка SALT LAKE CITY. Это металлическая ручка, особенностью которой является наличие стилуса, который поможет вам в управлении вашими гаджетами. Также наш склад пополнился ручками Cosmo, являющимися одними из самых популярных моделей у наших покупателей. По желанию на товар производится нанесение логотипа, надписи или полноцветного изображения в короткие сроки, наши опытные дизайнеры выполнят макет бесплатно (кроме дизайна календарей и полиграфических макетов с нуля.) Наши курьеры бесплатно привезут образцы товара для ознакомления. Готовый заказ доставляется бесплатно* по Москве и Санкт-Петербургу до двери заказчика на нашем фирменном транспорте.
+.news-article.section-margin
+    h1.news-article__title.fz-h1 Replenishment of balance via bot in telegram and viber
+    .news-article__header
+        .news-article__header-left
+            +lazy-img({
+                img: '/images/news.png'
+            })
+        .news-article__header-right
+            .news-article__social
+                a(href='#').news-article__link
+                    .icon
+                        <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="21.5" cy="21.5" r="21.5" fill="#415993"/>
+                        <path d="M23.5317 33.7427V23.3906H27.0064L27.5267 19.3563H23.5317V16.7805C23.5317 15.6125 23.8561 14.8164 25.5311 14.8164L27.6675 14.8154V11.2071C27.2978 11.1581 26.0298 11.0483 24.5545 11.0483C21.4743 11.0483 19.3656 12.9284 19.3656 16.3811V19.3564H15.8818V23.3908H19.3655V33.7428L23.5317 33.7427Z" fill="white"/>
+                        </svg>
+                a(href='#').news-article__link
+                    .icon
+                        <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="21.5" cy="21.5" r="21.5" fill="#74A8D7"/>
+                        <path d="M32.185 12.9516C32.088 12.6868 31.9909 12.6206 31.8616 12.5875C31.5058 12.4551 30.956 12.6537 30.956 12.6537C30.956 12.6537 10.5483 20.168 9.384 20.9955C9.12527 21.161 9.06058 21.2934 8.9959 21.3927C8.80185 21.9886 9.41634 22.2534 9.41634 22.2534L14.6881 24.0078C14.6881 24.0078 14.8821 24.0409 14.9468 24.0078C16.1434 23.2465 26.978 16.2288 27.5925 15.9971C27.6895 15.964 27.7542 15.997 27.7542 16.0633C27.4954 16.957 18.084 25.5305 18.084 25.5305C18.084 25.5305 18.0516 25.5636 18.0193 25.6298L17.5341 30.9593C17.5341 30.9593 17.3401 32.5813 18.9248 30.9593C20.0568 29.8007 21.1564 28.8408 21.6739 28.3774C23.485 29.6684 25.4255 31.0586 26.2664 31.82C26.6869 32.1841 27.0426 32.2503 27.3337 32.2503C28.1423 32.2172 28.3687 31.3234 28.3687 31.3234C28.3687 31.3234 32.088 15.997 32.2173 13.9447C32.2173 13.7461 32.2497 13.6137 32.2497 13.4813C32.2173 13.2496 32.2173 13.0509 32.185 12.9516Z" fill="white"/>
+                        </svg>
+
+                a(href='#').news-article__link
+                    .icon
+                        <svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="21.5" cy="21.5" r="21.5" fill="#4CAAE7"/>
+                        <path d="M18.0496 31.3879C26.8092 31.3879 31.5872 24.1413 31.5872 17.8503C31.5872 17.638 31.5872 17.4522 31.5606 17.2398C32.4897 16.5762 33.286 15.7268 33.9231 14.7712C33.0736 15.1428 32.1446 15.4083 31.189 15.5145C32.1711 14.9305 32.9144 14.0014 33.286 12.8866C32.3569 13.444 31.3483 13.8156 30.26 14.0545C29.384 13.1255 28.163 12.5415 26.7827 12.5415C24.1548 12.5415 22.0313 14.665 22.0313 17.2929C22.0313 17.6645 22.0843 18.0361 22.164 18.3812C18.2089 18.1954 14.7051 16.2842 12.3692 13.4175C11.971 14.1076 11.7321 14.9305 11.7321 15.8064C11.7321 17.4522 12.5816 18.9121 13.8557 19.7615C13.0859 19.735 12.3426 19.5226 11.7056 19.1775C11.7056 19.2041 11.7056 19.2041 11.7056 19.2306C11.7056 21.54 13.3513 23.4512 15.5279 23.9024C15.1298 24.0086 14.7051 24.0617 14.2804 24.0617C13.9618 24.0617 13.6698 24.0351 13.3779 23.982C13.9884 25.8667 15.7403 27.247 17.8108 27.2735C16.1916 28.5476 14.1211 29.3174 11.8914 29.3174C11.5198 29.3174 11.1216 29.2909 10.75 29.2643C12.847 30.6181 15.3687 31.3879 18.0496 31.3879Z" fill="white"/>
+                        </svg>
+
+
+    .news-article__date
+        +icon('i-calendar')(style="width:24px; height:24px")
+        span 03.02.2023
+    .news-article__content.content
+        h2.fz-h2 Server Administration
+        p Discounts apply to ordering new flexible configurations based on Xeon E5-2620v4, Xeon 2xE5-2620v4, AMD Ryzen 9 3900X and AMD Ryzen 9 5950X processors for the entire lease period of a dedicated server with a one-time payment for the specified period (1, 3, 6 or 12 months ).
+        p Discounts: - 20% servers with Xeon E5 - 2620v4; -25 % for servers with Xeon 2xE5 - 2620v4; -50 % for servers with AMD Ryzen 9 5950X and 3900X.
+        p The discount applies only to the servers listed in the terms of the promotion, ordered through the configurator on the main page of the site.
+        p During the promotion period, the user can order any number of new servers (provided that the configurations listed in the promotion conditions are available).
+        p Ready-made configurations do not participate in the promotion.
+        p Discounts of 20, 25 and 50% apply to the following resources: processor, platform, RAM, disks (HDD/SSD/NVMe).
+        p Discounts do not apply to additional services: OS, additional IP addresses, backup disk, backup, domains, control panels, licenses, technical support services, traffic, etc.
+        p If you cancel the server for the promotion, the discount is not transferred to other services.
+        p The offer is not valid simultaneously with other discounts and promotional codes for dedicated servers.
+        h3.fz-h3 Filling in the details for invoicing
+        p If you are issuing an invoice for the first time, after that the system will prompt you to fill in the data about the payer. They include the name of the company / full name of an individual, country of incorporation, type of organization (legal entity, individual or individual entrepreneur), address of the organization, TIN and KPP:
+        h4.fz-h4 Filling in the details for invoicing
+        p If you have already issued an invoice and filled in the payer's data in your Personal Account, the system will automatically prompt you to select it and issue an invoice using the previously filled in details. Before paying, do not forget to check that your details on the invoice are correct. If necessary, you can edit them in the Client — Payers section.
+    .news-article__pagination
+        include ../pagination/pagination-news
+
+

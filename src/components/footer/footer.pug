@@ -9,7 +9,10 @@ footer.footer.section-margin
 
             .footer-top
                 .footer-top__left
-                    .footer-logo LOGO
+                    .footer-logo
+                        +lazy-img({
+                            img: 'images/footer-logo.svg'
+                        })
                     .footer-address
                         span NKtelecom INC 7901 4th St N,
                         span STE 300 St. Petersburg , FL 33702

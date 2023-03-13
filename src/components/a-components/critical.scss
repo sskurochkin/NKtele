@@ -56,6 +56,23 @@
 	}
 }
 
+.c-row{
+	display: grid;
+	grid-template-columns: 300px auto;
+	gap: 30px;
+	@media (max-width: $md - 1) {
+		grid-template-columns: 1fr;
+	}
+}
+.c-col-l{
+	@media (max-width: $md - 1) {
+		height: 60px;
+		//display: flex;
+		//justify-content: center;
+		//margin-bottom: 30px;
+	}
+}
+
 .link-full {
 	display: block;
 

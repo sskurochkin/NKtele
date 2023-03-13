@@ -4,7 +4,7 @@ mixin style-includer()
     if (PROJECT_MODE !== 'dev')
         each item in componentsList
             - var id =  Math.floor(Math.random() * 9999999999);
-            link(rel='stylesheet' href= dir + 'components-template/' + item + '/style.css?' + id as='style' onload="this.onload=null;this.rel='stylesheet'")
+            link(rel='stylesheet' href= dir + 'components-template/' + item + '/style.css?' + id as='style')
 
 
 

@@ -37,24 +37,29 @@ html(lang='ru-RU')
 
         //- Подключение общих критический стилей
         if (PROJECT_MODE !== 'dev')
-            style(data-critical)
+            //style(data-critical)
                 //- include ../../local/templates/html/critical.css
 
             //- Якорь для втавки критикал стилей компнентов
             style(data="component")
+        - var id =  Math.floor(Math.random() * 9999999999);
+        link(href=SITE_TEMPLATE_PATH + 'critical.css?' + id rel="stylesheet")
 
 
 
     body(class = pageBodyClass)(x-data="{overflow:false}")(:class="!overflow ? '': 'overflow'")
-        script.
-            document.querySelector('body').classList.remove('no-js');
+        //script.
+        //    document.querySelector('body').classList.remove('no-js');
 
         .wrapper
+
             include ../components/header/header
             main.main
+
                 block main
 
             include ../components/footer/footer
+
 
 
         // Модальные окна
@@ -92,10 +97,12 @@ html(lang='ru-RU')
         block componentsScripts
 
         // Общие стели для всех страниц
-        - var id =  Math.floor(Math.random() * 9999999999);
-        link(href=SITE_TEMPLATE_PATH + 'critical.css?' + id rel="stylesheet")
+        // - var id =  Math.floor(Math.random() * 9999999999);
+        //link(href=SITE_TEMPLATE_PATH + 'critical.css?' + id rel="stylesheet")
 
+        //block componentsStyles
         block componentsStyles
+
 
         //якорь подключения объединенного js
         script(data="component")

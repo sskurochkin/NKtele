@@ -79,7 +79,25 @@ window.addEventListener('load', function () {
                         watchOverflow: true,
                         simulateTouch: true,
                         // slidesPerView: 1,
-                        slidesPerView: 'auto',
+                        slidesPerView: 1,
+                        breakpoints:{
+                            575:{
+                                slidesPerView: 1
+                            },
+                            768:{
+                                slidesPerView: 2
+                            },
+                            900:{
+                                slidesPerView: 3
+                            },
+                            1240:{
+                                slidesPerView: 4
+                            },
+                            1700:{
+                                slidesPerView: 5
+                            },
+
+                        },
 
                         slideClass: 'product-card-wrap',
                         pagination: {

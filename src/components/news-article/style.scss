@@ -1,10 +1,57 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
 
 .news-article {
-	&__date {
-		font-size    : 16px;
-		margin-bottom: 23px;
+	&.section-margin{
+		padding-bottom: 0;
+	}
+	&__title{
+		margin-bottom: 24px;
+		@media (max-width: $sm - 1) {
+			margin-bottom: 16px;
+		}
+	}
+	&__header{
+		display: grid;
+		grid-template-columns: auto 18%;
+		margin-bottom: 24px;
+		gap: 50px;
+		@media (max-width: $sm - 1) {
+			margin-bottom: 16px;
+			gap: 36px;
+		}
+		&-left{
+			position: relative;
+			padding-bottom: 63%;
+			border-radius: 20px;
+			overflow: hidden;
+			@media (max-width: $sm - 1) {
+				border-radius: 10px;
+			}
+			.lazy-img-wrap{
+				@include lazy();
+				img{
+					object-fit: cover;
+				}
+			}
+		}
+		&-right{
+
+		}
+	}
+	&__social{
+		margin-left: auto;
+		display: flex;
+		align-items: flex-end;
+		flex-direction: column;
+		gap: 6px;
 	}
 
-	margin-bottom: 100px;
+	&__date {
+
+		margin-bottom: 24px;
+		display: flex;
+		align-items: center;
+		gap: 4px;
+		fill: transparent;
+	}
 }

@@ -1,0 +1,46 @@
++include-style('nav')
++include-script('navleft')
+
+
+.nav.nav--personal(x-data="{navOpen : false}")
+    ul.nav-list(@click="navOpen = !navOpen"  :class="navOpen ? 'active' :''")
+        li.nav-item.active
+            a.nav-link(href='#s1')
+                +icon('i-nav-5')(style="width: 24px; height:24px")
+
+                span Server Administration
+        li.nav-item
+            a.nav-link(href='#s2')
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 9.5874H21V18.5874C21 19.5302 21 20.0016 20.7071 20.2945C20.4142 20.5874 19.9428 20.5874 19 20.5874H15V9.5874Z" stroke="#0E0C04" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 9.5874H9V20.5874H5C4.05719 20.5874 3.58579 20.5874 3.29289 20.2945C3 20.0016 3 19.5302 3 18.5874V9.5874Z" stroke="#0E0C04" stroke-width="2" stroke-linecap="round"/>
+                <rect x="9" y="9.5874" width="6" height="11" stroke="#0E0C04" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 6.5874C3 5.64459 3 5.17319 3.29289 4.8803C3.58579 4.5874 4.05719 4.5874 5 4.5874H19C19.9428 4.5874 20.4142 4.5874 20.7071 4.8803C21 5.17319 21 5.64459 21 6.5874V9.5874H3V6.5874Z" stroke="#0E0C04" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+
+                span Control panels
+        li.nav-item
+            a.nav-link(href='#s3')
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.001 11.5874L14.001 15.5874L10.001 19.5874" stroke="#0E0C04" stroke-width="2"/>
+                <path d="M19.7942 13.3374C20.7848 12.4795 21.1816 11.4822 20.923 10.5C20.6644 9.51791 19.7649 8.60588 18.364 7.90542C16.963 7.20496 15.139 6.7552 13.1747 6.6259C11.2105 6.4966 9.21578 6.69499 7.5 7.19029C5.78422 7.68559 4.44326 8.45013 3.68508 9.36533C2.92691 10.2805 2.79389 11.2952 3.30667 12.2521C3.81944 13.2089 4.94935 14.0545 6.52115 14.6575C8.09295 15.2605 10.0188 15.5874 12 15.5874" stroke="#0E0C04" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+
+                span Backup
+        li.nav-item
+            a.nav-link(href='#s4')
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.7022 5.78441L12.7878 3.24968C12.2847 3.03406 11.7153 3.03406 11.2122 3.24968L5.29778 5.78441C4.47855 6.13551 3.99051 6.98635 4.10106 7.87077L4.71405 12.7747C4.9342 14.5359 5.81517 16.1477 7.1787 17.284L10.7196 20.2347C11.4613 20.8528 12.5387 20.8528 13.2804 20.2347L16.8213 17.284C18.1848 16.1477 19.0658 14.5359 19.286 12.7747L19.8989 7.87077C20.0095 6.98635 19.5215 6.13551 18.7022 5.78441Z" stroke="#0E0C04" stroke-width="2" stroke-linecap="round"/>
+                <path d="M9 12L11.5687 14.5687C11.7918 14.7918 12.1633 14.7551 12.3383 14.4925L16 9" stroke="#0E0C04" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                span SSL sertificate
+        li.nav-item
+            a.nav-link(href='#s5')
+                <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12.5874" r="8" stroke="#0E0C04" stroke-width="2"/>
+                <path d="M18.572 7.79377C17.8483 8.64093 16.8869 9.33602 15.7672 9.82162C14.6475 10.3072 13.4017 10.5694 12.1326 10.5865C10.8636 10.6036 9.60778 10.3751 8.4689 9.91996C7.33002 9.46479 6.34077 8.79598 5.58288 7.96879" stroke="#0E0C04" stroke-width="2"/>
+                <path d="M18.572 17.381C17.8483 16.5339 16.8869 15.8388 15.7672 15.3532C14.6475 14.8676 13.4017 14.6054 12.1326 14.5883C10.8636 14.5712 9.60778 14.7997 8.4689 15.2548C7.33002 15.71 6.34077 16.3788 5.58288 17.206" stroke="#0E0C04" stroke-width="2"/>
+                <path d="M12 4.5874V20.5874" stroke="#0E0C04" stroke-width="2"/>
+                </svg>
+
+                span Domain names

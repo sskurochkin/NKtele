@@ -15,7 +15,7 @@
 		position     : relative;
 		display      : flex;
 		overflow     : hidden;
-		align-items  : center;
+		//align-items  : center;
 		flex-shrink  : 1;
 		flex-wrap    : nowrap;
 		margin       : 0;
@@ -27,6 +27,8 @@
 	&__item {
 		position  : relative;
 		list-style: none;
+		display: flex;
+		//align-items: center;
 
 		&:first-child {
 			.breadcrumb__link {
@@ -70,7 +72,7 @@
 	&__link {
 		padding    : 0 5px 0 10px;
 		transition : color .3s;
-		white-space: nowrap;
+		//white-space: nowrap;
 		color      : #75787C;
 
 		&:hover {
