@@ -1,16 +1,28 @@
 @import "src/assets/css/vars_mixins/vars_mixins";
 
 .s-line{
-	display: flex;
-	align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	justify-items: center;
 	justify-content: space-between;
 	margin: 20px 0;
 	//position: relative;
 	//z-index: 2;
-	@media (max-width: $sm - 1) {
-		flex-direction: column;
+	&.vps{
+		.a-select{
+			&:first-child{
+				opacity: 0;
+				@media (max-width: $md - 1) {
+					opacity: 1;
+					display: none;
+				}
+			}
+		}
+	}
+	@media (max-width: $md - 1) {
+		grid-template-columns: 1fr;
 		gap: 24px;
-		justify-content: flex-start;
+
 		margin: 20px 0 30px;
 	}
 }

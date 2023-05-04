@@ -6,6 +6,9 @@
 	border-radius: 20px;
 	//width: 300px;
 	padding: 10px 20px 22px;
+	.product-price{
+		display: none;
+	}
 	&__inner{
 		display: flex;
 		flex-direction: column;

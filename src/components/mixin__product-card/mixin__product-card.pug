@@ -3,6 +3,7 @@ mixin product-card(args={})
     +include-style('mixin__product-card')
     .product-card(class=`product-card--${args.mod}`)
         .product-card__inner
+            .product-price 120
             .product-card__header
                 img(src='/dist/images/usa.svg')
                 span Cloud-200

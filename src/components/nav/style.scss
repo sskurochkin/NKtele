@@ -4,9 +4,20 @@
 	.nav-list {
 		display: flex;
 		justify-content: flex-end;
+		@media (max-width: $sm - 1) {
+			.menu-item{
+				&:not(:last-child){
+					margin-bottom: 24px;
+				}
+			}
+			.nav-item{
+				font-size: 16px;
+			}
+		}
 	}
 
-	.nav-item {
+	li{
+
 		&:not(:last-child) {
 			margin-right: 40px;
 			@media (max-width: $md - 1) {
@@ -17,11 +28,22 @@
 
 		font-weight: 600;
 
-		&.active {
-			pointer-events: none;
+
+
 
 			.nav-link {
-				color: $c-text;
+				&.active{
+					color: $c-text;
+					pointer-events: none;
+				}
+
+			}
+
+	}
+	&.footer-nav{
+		.nav-link{
+			&.active{
+				color: #f0f0f0;
 			}
 		}
 	}
